@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reequilibra - Detalhes do Fórum</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+<body>
+
+<script src="../login/scripts/login.js"></script>
+
+<!-- HEADER -->
+<header class="header">
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="../../index.html">
+        <img
+          src="../../assets/images/logo.png"
+          alt="Reequilibra"
+          class="logo"
+        />
+      </a>
+    </div>
+     <div class="nav-menu" id="navMenu">
+          <a href="../../index.html" class="nav-link">Início</a>
+          <a href="../missoes/index.html" class="nav-link">Serviços</a>
+        </div>
+    <div class="nav-actions">
+      <a
+        id="loginBtn"
+        href="./modulos/login/login.html"
+        class="nav-link"
+        >Login</a
+      >
+      <a
+        id="signupBtn"
+        href="./modulos/login/cadastro.html"
+        class="btn btn-outline"
+        >Cadastro</a
+      >
+      <a
+      id="logoutBtn"
+      onclick="logoutUser()" 
+      class="btn btn-danger"
+      >Logout</a>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Alternar tema"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+  <main class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-12">
+        <!-- Botão Voltar -->
+        <a href="index.html" class="btn btn-outline-secondary mb-4">
+          <i class="bi bi-arrow-left"></i> Voltar para Fóruns
+        </a>
+        
+        <!-- Detalhes do Fórum -->
+        <div id="forumDetails" class="bg-white p-4 rounded shadow-sm mb-4">
+          <!-- Conteúdo carregado dinamicamente -->
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+        </div>
+        
+        <!-- Comentários -->
+        <div class="bg-white p-4 rounded shadow-sm mb-4">
+          <h4 class="mb-4">Comentários</h4>
+          <div id="commentsList" class="mb-4">
+            <!-- Comentários carregados dinamicamente -->
+          </div>
+          
+          <!-- Formulário de Comentário -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Adicionar Comentário</h5>
+              <form id="commentForm">
+                <div class="mb-3">
+                  <label for="commentAuthor" class="form-label">Seu Nome</label>
+                  <input type="text" class="form-control" id="commentAuthor" required>
+                </div>
+                <div class="mb-3">
+                  <label for="commentContent" class="form-label">Comentário</label>
+                  <textarea class="form-control" id="commentContent" rows="3" required></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="isHealthProfessional">
+                  <label class="form-check-label" for="isHealthProfessional">Sou profissional de saúde</label>
+                </div>
+                <button type="submit" class="btn btn-custom">Enviar Comentário</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para Editar Fórum -->
+  <div class="modal fade" id="editForumModal" tabindex="-1" aria-labelledby="editForumModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editForumModalLabel">Editar Fórum</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editForumForm">
+            <input type="hidden" id="editForumId">
+            <div class="mb-3">
+              <label for="editForumTitle" class="form-label">Título</label>
+              <input type="text" class="form-control" id="editForumTitle" placeholder="Digite o título do fórum" required>
+            </div>
+            <div class="mb-3">
+              <label for="editForumContent" class="form-label">Conteúdo</label>
+              <textarea class="form-control" id="editForumContent" rows="4" placeholder="Descreva sua pergunta ou tópico de discussão" required></textarea>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="editForumIsHealthProfessional">
+              <label class="form-check-label" for="editForumIsHealthProfessional">
+                Sou profissional de saúde
+              </label>
+            </div>
+            <div class="mb-3">
+              <label for="editForumAuthor" class="form-label">Seu Nome</label>
+              <input type="text" class="form-control" id="editForumAuthor" placeholder="Digite seu nome" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-custom" id="btnSaveEditForum">Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Função para verificar se o usuário está logado
+    function verificaUsuarioCorrente() {
+      const usuarioCorrenteJSON = localStorage.getItem("usuarioLogado");
+      if (!usuarioCorrenteJSON) {
+        // Salva a URL original antes de redirecionar para o login
+        window.location.href = "../login/login.html"; // Redireciona para login
+      }
+    }
+  
+    // Chama a função imediatamente ao carregar a página
+    verificaUsuarioCorrente();
+  </script>
+
+<script src="../../assets/js/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/forum-detalhes.js"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

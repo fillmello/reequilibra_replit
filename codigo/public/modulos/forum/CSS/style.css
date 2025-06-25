@@ -1,0 +1,179 @@
+/* ========== RESET & VARIÁVEIS ========== */
+:root {
+
+  --primary-green: #01ae7d;
+    --primary-purple: #9664a9;
+--primary-green-soft: #52bfa6;
+  --background: #C5E0ED;
+  --surface: #f8f9fa;
+  --surface-elevated: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-elevated: rgba(0, 0, 0, 0.15);
+  --gradient-primary: linear-gradient(135deg, var(--primary-green));
+  --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.1), rgba(57, 152, 92, 0.1));
+}
+
+[data-theme="dark"] {
+  --background: #1A1A1A;
+  --surface: #1a1a1a;
+  --surface-elevated: #262626;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --border: #27272a;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-elevated: rgba(0, 0, 0, 0.5);
+  --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.2), rgba(57, 152, 92, 0.2));
+}
+
+[data-theme="dark"] .memory-card {
+  background-color: var(--surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 15px var(--shadow-elevated);
+}
+
+[data-theme="dark"] .memory-card:hover {
+  background-color: var(--surface);
+  box-shadow: 0 10px 20px var(--shadow-elevated);
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILO GLOBAL ========== */
+body {
+  background-color: var(--background);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding-top: 86px;
+}
+
+/* ========== MEMORIES ========== */
+#memoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.memory-item {
+  width: 100%;
+}
+
+.memory-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.memory-img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+#memoryForm {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* ========== FÓRUNS ========== */
+.forum-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.forum-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.active-forum {
+  border-left: 4px solid var(--cor-primaria);
+  background-color: #f0f8f5;
+}
+
+.post-author {
+  font-weight: 600;
+  color: var(--cor-primaria);
+}
+
+.post-time {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* ========== BOTÕES & FORMULÁRIOS ========== */
+.btn-custom {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #018d63;
+  color: white;
+}
+
+/* ========== MODAL ========== */
+.modal-content {
+  border-radius: 10px;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 992px) {
+  .memory-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .memory-img {
+    height: 200px;
+  }
+  
+  #memoryForm {
+    padding: 15px;
+  }
+}
+
+
+/* ========== SELEÇÃO DE MEMORIES ========== */
+.selected-memory {
+  border: 3px solid var(--cor-primaria) !important;
+  transform: scale(1.02);
+}
+
+.memory-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reequilibra - To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../assets/css/emergencia.css" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global-theme.css" />
+    <link rel="stylesheet" href="../../assets/css/emergencia.css" />
+    <link rel="stylesheet" href="../../assets/css/sidebar.css" />
+    <style>
+
+.logout-link {
+  color: #dc3545 !important;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem !important;
+}
+
+.logout-link:hover {
+  background: rgba(220, 53, 69, 0.1) !important;
+  color: #dc3545 !important;
+}
+
+[data-theme="dark"] .logout-link {
+  color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .logout-link:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff6b6b !important;
+}
+</style>
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img id="sidebarLogo" src="../../assets/images/logo.png" alt="Logo" />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="../missoes/index.html" class="sidebar-link">
+              <i class="fas fa-home"></i>
+              <span class="sidebar-text">Home</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../forum/index.html" class="sidebar-link active">
+              <i class="fas fa-comments"></i>
+              <span class="sidebar-text">Fórum</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../artigos/artigos.html" class="sidebar-link">
+              <i class="fas fa-newspaper"></i>
+              <span class="sidebar-text">Artigos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../diario/index.html" class="sidebar-link">
+              <i class="fas fa-book"></i>
+              <span class="sidebar-text">Diário</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../meditacao/index.html" class="sidebar-link">
+              <i class="fas fa-brain"></i>
+              <span class="sidebar-text">Área de meditação</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../toDo/index.html" class="sidebar-link">
+              <i class="fas fa-check-square"></i>
+              <span class="sidebar-text">Todo list</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../info_psic/psicologos.html" class="sidebar-link">
+              <i class="fas fa-user"></i>
+              <span class="sidebar-text">Psicólogos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link logout-link" id="sidebarLogout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="sidebar-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <button
+      id="expandSidebarBtn"
+      class="expand-sidebar-btn"
+      style="display: none"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <main class="container main-content">
+      <div class="content-grid">
+        <div class="form-section">
+          <h2>Nova Tarefa</h2>
+          <div class="form-group">
+            <input
+              type="text"
+              id="tituloTarefa"
+              placeholder="Digite o título da tarefa"
+              class="input-large"
+            />
+            <button onclick="adicionarTarefa()" class="btn-primary btn-full">
+              Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+
+        <div class="tasks-section">
+          <div class="tasks-header">
+            <h2>Minhas Tarefas</h2>
+            <div class="task-actions">
+              <button
+                onclick="limparCampo()"
+                class="btn-icon"
+                title="Nova tarefa"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div id="listaTarefas" class="tasks-list"></div>
+        </div>
+      </div>
+    </main>
+
+    <button id="emergencyBtn" class="emergency-btn">
+      <i class="fas fa-exclamation-triangle"></i>
+      <span>SOS</span>
+    </button>
+
+    <div id="emergencyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-heart-pulse"></i> EMERGÊNCIA</h2>
+          <button id="closeModal" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="emergency-grid">
+          <div class="emergency-card cvv" onclick="callCVV()">
+            <div class="card-icon"><i class="fas fa-phone"></i></div>
+            <div class="card-content">
+              <h3>CVV 188</h3>
+              <p>24h gratuito</p>
+            </div>
+          </div>
+
+          <div class="emergency-card contacts" onclick="showContacts()">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <div class="card-content">
+              <h3>Contatos</h3>
+              <p>Pessoas próximas</p>
+            </div>
+          </div>
+
+          <div class="emergency-card samu" onclick="callSAMU()">
+            <div class="card-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="card-content">
+              <h3>SAMU 192</h3>
+              <p>Emergência médica</p>
+            </div>
+          </div>
+
+          <div class="emergency-card caps" onclick="showServices()">
+            <div class="card-icon"><i class="fas fa-hospital"></i></div>
+            <div class="card-content">
+              <h3>CAPS BH</h3>
+              <p>Saúde mental</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="contactsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-users"></i> CONTATOS DE CONFIANÇA</h2>
+          <button onclick="closeModal('contactsModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="contacts-actions">
+          <button onclick="showAddContact()" class="add-contact-btn">
+            <i class="fas fa-plus"></i> Adicionar Contato
+          </button>
+        </div>
+        <div id="contactsList" class="contacts-list"></div>
+        <div id="noContacts" class="no-contacts" style="display: none">
+          <i class="fas fa-user-plus"></i>
+          <p>Nenhum contato cadastrado</p>
+          <small>Adicione pessoas de confiança para emergências</small>
+        </div>
+      </div>
+    </div>
+
+    <div id="addContactModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="addContactTitle">
+            <i class="fas fa-user-plus"></i> ADICIONAR CONTATO
+          </h2>
+          <button onclick="closeModal('addContactModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="contactName">Nome:</label>
+            <input
+              type="text"
+              id="contactName"
+              placeholder="Ex: Maria (Mãe)"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Telefone:</label>
+            <input
+              type="tel"
+              id="contactPhone"
+              placeholder="(31) 99999-9999"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactRelation">Relação:</label>
+            <select id="contactRelation">
+              <option value="Família">Família</option>
+              <option value="Amigo(a)">Amigo(a)</option>
+              <option value="Namorado(a)">Namorado(a)</option>
+              <option value="Cônjuge">Cônjuge</option>
+              <option value="Colega">Colega</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="save-btn">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button
+              type="button"
+              onclick="closeModal('addContactModal')"
+              class="cancel-btn"
+            >
+              <i class="fas fa-times"></i> Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="servicesModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-hospital"></i> SERVIÇOS BH</h2>
+          <button onclick="closeModal('servicesModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <strong>CAPS Pampulha</strong>
+              <span>Centro de Atenção Psicossocial</span>
+              <small>(31) 3277-7004</small>
+            </div>
+            <button onclick="callService('31327777004')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <strong>Hospital João XXIII</strong>
+              <span>Emergência psiquiátrica 24h</span>
+              <small>(31) 3239-9200</small>
+            </div>
+            <button onclick="callService('31323999200')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <strong>CAPS Centro</strong>
+              <span>Rua Tupis, 149 - Centro</span>
+              <small>(31) 3277-5208</small>
+            </div>
+            <button onclick="callService('31327775208')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/app.js"></script>
+    <script src="../../assets/js/emergencia.js"></script>
+    <script src="../../assets/js/sidebar.js"></script>
+  </body>
+</html>

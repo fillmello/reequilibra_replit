@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Artigos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="crudartigos.css">
+</head>
+
+<body>
+   <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="#home">
+          <img src="../../assets/images/logo.png" alt="Reequilibra" class="logo" />
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="../../index.html" class="nav-link">Início</a>
+        <a href="../missoes/index.html" class="nav-link">Serviços</a>
+      </div>
+      <div class="nav-actions">
+        <a id="logoutBtn" onclick="logoutUser()" class="btn btn-danger">Logout</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+    <div class="container">
+        <h1>Cadastro de Artigos</h1>
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 "></div>
+        </div>
+
+        <form id="form-artigo">
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-8">
+                    <label for="inputTitulo">Titulo do artigo</label>
+                    <input type="text" class="form-control" id="inputTitulo" required placeholder="Informe o titulo do artigo">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <label for="inputData">Data de postagem do artigo</label>
+                    <input type="date" class="form-control" id="inputData" required placeholder="Data de postagem do artigo">
+                </div>
+                <div class="col-sm-7">
+                    <label for="inputAutor">Autor(a)</label>
+                    <input type="text" class="form-control" id="inputAutor" required placeholder="Informe o autor(a)">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="inputCategoria">Categoria</label>
+                    <select class="form-control" id="inputCategoria" required>
+                        <option value="">Selecione uma categoria</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label for="inputLink">Link do artigo</label>
+                    <input type="text" class="form-control" id="inputLink" required placeholder="Informe o link do artigo completo">
+                </div>
+                <div class="form-group row mt-3">
+                    <div class="col-sm-12">
+                        <label for="inputTexto">Resumo do artigo</label>
+                        <textarea class="form-control" id="inputTexto" rows="6" required placeholder="Digite o conteúdo do artigo"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <small>Campos obrigatórios</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <div class="d-flex justify-content-center gap-2">
+                        <input type="button" class="btn" id="btnInsert" value="Inserir">
+                        <input type="button" class="btn" id="btnUpdate" value="Alterar">
+                        <input type="button" class="btn" id="btnDelete" value="Excluir">
+                        <input type="button" class="btn" id="btnClear" value="Limpar Form">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="grid-artigos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Autor(a)</th>
+                            <th scope="col">Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-artigos">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+      // Função para verificar se o usuário está logado
+      function verificaUsuarioCorrente() {
+        const usuarioCorrenteJSON = localStorage.getItem("usuarioLogado");
+        if (!usuarioCorrenteJSON) {
+          // Salva a URL original antes de redirecionar para o login
+          window.location.href = "../login/login.html"; // Redireciona para login
+        }
+      }
+
+      // Chama a função imediatamente ao carregar a página
+      verificaUsuarioCorrente();
+    </script>
+
+    <script src="crudartigos.js"></script>
+</body>
+
+</html>

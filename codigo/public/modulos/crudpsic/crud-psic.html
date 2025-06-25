@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Psicólogos - Reequilibra</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../assets/css/emergencia.css" />
+  <link rel="stylesheet" href="./assets/css/crud-psic.css" />
+
+</head>
+<body>
+
+  <script src="../login/scripts/login.js"></script>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="Reequilibra" class="logo" />
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="../../index.html" class="nav-link">Início</a>
+        <a href="../missoes/index.html" class="nav-link">Serviços</a>
+      </div>
+      <div class="nav-actions">
+        <a id="loginBtn" href="./modulos/login/login.html" class="nav-link">Login</a>
+        <a id="signupBtn" href="./modulos/login/cadastro.html" class="btn btn-outline">Cadastro</a>
+        <a id="logoutBtn" onclick="logoutUser()" class="btn btn-danger">Logout</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-crud">
+    <div class="form-section">
+      <a href="../info_psic/psicologos.html" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </a>
+      <h1 class="form-title">Cadastro de Psicólogos</h1>
+      <p class="form-subtitle">
+        Preencha o formulário abaixo para se cadastrar em nossa plataforma
+      </p>
+
+      <form id="psicologoForm" class="psicologo-form">
+        <input type="hidden" id="psicologoId" />
+        <div class="form-row">
+          <div class="areas-form">
+            <label for="nome">Nome Completo*</label>
+            <input type="text" id="nome" name="nome" required placeholder="Ex: Dra. Ana Paula Silva" />
+          </div>
+
+          <div class="areas-form">
+            <label for="crp">Número do CRP*</label>
+            <input type="text" id="crp" name="crp" required placeholder="Ex: 123456/SP" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="areas-form">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+          </div>
+
+          <div class="areas-form">
+            <label for="whatsapp">WhatsApp*</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(19) 91234-5678" />
+          </div>
+        </div>
+
+        <div class="areas-form">
+          <label for="area_atuacao">Área de Atuação*</label>
+          <input type="text" id="area_atuacao" name="area_atuacao" required
+            placeholder="Ex: Terapia Cognitivo-Comportamental" />
+        </div>
+
+        <div class="areas-form">
+          <label for="descricao">Descrição Profissional*</label>
+          <textarea id="descricao" name="descricao" required rows="4"
+            placeholder="Descreva sua abordagem e especialidades"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="areas-form">
+            <label for="local_atendimento">Local de Atendimento*</label>
+            <select id="local_atendimento" name="local_atendimento" required>
+              <option value="">Selecione...</option>
+              <option value="Online">Online</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Online e Presencial">Online e Presencial</option>
+            </select>
+          </div>
+
+          <div class="areas-form">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" />
+          </div>
+        </div>
+
+        <div class="areas-form">
+          <label for="horarios">Horários de Atendimento*</label>
+          <input type="text" id="horarios" name="horarios" required placeholder="Ex: Segunda a Sexta, 13h às 20h" />
+        </div>
+
+        <div class="areas-form">
+          <label for="foto">Foto de Perfil</label>
+          <input type="file" id="foto" name="foto" accept="image/*" />
+          <div id="fotoPreview" class="foto-preview"></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            Cadastrar
+          </button>
+          <button type="reset" class="btn btn-outline" id="cancelBtn">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <section class="table-section">
+    <h2 class="table-title">Psicólogos Cadastrados</h2>
+    <div class="table-responsive">
+      <table id="psicologosTable" class="psicologos-table">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>CRP</th>
+            <th>Área</th>
+            <th>Atendimento</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="psicologosTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="confirmcrud" class="crud">
+    <div class="crud-content small-crud">
+      <h3 id="confirmcrudTitle">Confirmar Exclusão</h3>
+      <p id="confirmcrudMessage">
+        Tem certeza que deseja excluir este psicólogo(a)?
+      </p>
+      <div class="crud-actions">
+        <button id="confirmDeleteBtn" class="btn btn-danger">Excluir</button>
+        <button id="cancelDeleteBtn" class="btn btn-outline">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-logo">Reequilibra</h3>
+          <p>
+            Seu espaço acolhedor e seguro dedicado ao bem-estar emocional.
+            Transformando vidas através do cuidado.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#">Psicólogos</a></li>
+            <li><a href="#">Meditação</a></li>
+            <li><a href="#">Diário pessoal</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Nossa Equipe</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Reequilibra. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Função para verificar se o usuário está logado
+    function verificaUsuarioCorrente() {
+      const usuarioCorrenteJSON = localStorage.getItem("usuarioLogado");
+      if (!usuarioCorrenteJSON) {
+        // Salva a URL original antes de redirecionar para o login
+        window.location.href = "../login/login.html"; // Redireciona para login
+      }
+    }
+
+    // Chama a função imediatamente ao carregar a página
+    verificaUsuarioCorrente();
+  </script>
+
+  <script src="../../assets/js/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../script.js"></script>
+  <script src="./assets/scripts/crud-psic.js"></script>
+
+  <button id="emergencyBtn" class="emergency-btn">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span>SOS</span>
+  </button>
+
+  <div id="emergencyModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-heart-pulse"></i> EMERGÊNCIA</h2>
+        <button id="closeModal" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="emergency-grid">
+        <div class="emergency-card cvv" onclick="callCVV()">
+          <div class="card-icon"><i class="fas fa-phone"></i></div>
+          <div class="card-content">
+            <h3>CVV 188</h3>
+            <p>24h gratuito</p>
+          </div>
+        </div>
+
+        <div class="emergency-card contacts" onclick="showContacts()">
+          <div class="card-icon"><i class="fas fa-users"></i></div>
+          <div class="card-content">
+            <h3>Contatos</h3>
+            <p>Pessoas próximas</p>
+          </div>
+        </div>
+
+        <div class="emergency-card samu" onclick="callSAMU()">
+          <div class="card-icon"><i class="fas fa-ambulance"></i></div>
+          <div class="card-content">
+            <h3>SAMU 192</h3>
+            <p>Emergência médica</p>
+          </div>
+        </div>
+
+        <div class="emergency-card caps" onclick="showServices()">
+          <div class="card-icon"><i class="fas fa-hospital"></i></div>
+          <div class="card-content">
+            <h3>CAPS BH</h3>
+            <p>Saúde mental</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contactsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-users"></i> CONTATOS DE CONFIANÇA</h2>
+        <button onclick="closeModal('contactsModal')" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="contacts-actions">
+        <button onclick="showAddContact()" class="add-contact-btn">
+          <i class="fas fa-plus"></i> Adicionar Contato
+        </button>
+      </div>
+
+      <div id="contactsList" class="contacts-list"></div>
+
+      <div id="noContacts" class="no-contacts" style="display: none">
+        <i class="fas fa-user-plus"></i>
+        <p>Nenhum contato cadastrado</p>
+        <small>Adicione pessoas de confiança para emergências</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="addContactModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="addContactTitle">
+          <i class="fas fa-user-plus"></i> ADICIONAR CONTATO
+        </h2>
+        <button onclick="closeModal('addContactModal')" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="contactName">Nome:</label>
+          <input type="text" id="contactName" placeholder="Ex: Maria (Mãe)" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactPhone">Telefone:</label>
+          <input type="tel" id="contactPhone" placeholder="(31) 99999-9999" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactRelation">Relação:</label>
+          <select id="contactRelation">
+            <option value="Família">Família</option>
+            <option value="Amigo(a)">Amigo(a)</option>
+            <option value="Namorado(a)">Namorado(a)</option>
+            <option value="Cônjuge">Cônjuge</option>
+            <option value="Colega">Colega</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="save-btn">
+            <i class="fas fa-save"></i> Salvar
+          </button>
+          <button type="button" onclick="closeModal('addContactModal')" class="cancel-btn">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="servicesModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-hospital"></i> SERVIÇOS BH</h2>
+        <button onclick="closeModal('servicesModal')" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-info">
+            <strong>CAPS Pampulha</strong><span>Centro de Atenção Psicossocial</span><small>(31) 3277-7004</small>
+          </div>
+          <button onclick="callService('31327777004')" class="call-btn">
+            <i class="fas fa-phone"></i>
+          </button>
+        </div>
+        <div class="service-item">
+          <div class="service-info">
+            <strong>Hospital João XXIII</strong><span>Emergência psiquiátrica 24h</span><small>(31) 3239-9200</small>
+          </div>
+          <button onclick="callService('31323999200')" class="call-btn">
+            <i class="fas fa-phone"></i>
+          </button>
+        </div>
+        <div class="service-item">
+          <div class="service-info">
+            <strong>CAPS Centro</strong><span>Rua Tupis, 149 - Centro</span><small>(31) 3277-5208</small>
+          </div>
+          <button onclick="callService('31327775208')" class="call-btn">
+            <i class="fas fa-phone"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/emergencia.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+:root {
+    --primary-green: #01ae7d;
+    --primary-purple: #9664a9;
+    --primary-green-soft: #52bfa6;
+    --background: #ffffff;
+    --surface: #f8f9fa;
+    --surface-elevated: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-elevated: rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--primary-green), var(--primary-purple));
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.1), rgba(57, 152, 92, 0.1));
+    --white: #fff;
+    --other-purple: #855597;
+    --red: #e74c3c;
+    --dark-red: #c0392b;
+}
+
+[data-theme="dark"] {
+    --background: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface-elevated: #262626;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border: #27272a;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-elevated: rgba(0, 0, 0, 0.5);
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.2), rgba(57, 152, 92, 0.2));
+}
+
+/* Formulário de Cadastro */
+.container-crud {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    margin-top: 100px;
+}
+
+.btn-voltar {
+    background: var(--surface);
+    color: var(--primary-purple);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid var(--primary-purple);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.btn-voltar:hover {
+    background: var(--primary-purple);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(150, 100, 169, 0.3);
+}
+
+.form-section {
+    position: relative;
+    background-color: var(--surface-elevated);
+    border-radius: 12px;
+    padding: 2rem;
+    padding-top: 5rem;
+    box-shadow: 0 4px 6px var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.form-title {
+    color: var(--primary-purple);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.psicologo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .areas-form {
+    flex: 1;
+}
+
+.areas-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.areas-form label {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.areas-form input,
+.areas-form select,
+.areas-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.areas-form input:focus,
+.areas-form select:focus,
+.areas-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(1, 174, 125, 0.2);
+}
+
+.areas-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+/* Tabela de Psicólogos */
+.table-section {
+    margin-top: 3rem;
+    background-color: var(--surface-elevated);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+.table-title {
+    color: var(--primary-purple);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.psicologos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.psicologos-table th,
+.psicologos-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.psicologos-table th {
+    background-color: var(--primary-green-soft);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.psicologos-table tr:hover {
+    background-color: rgba(1, 174, 125, 0.05);
+}
+
+.psicologo-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-edit {
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.btn-edit:hover {
+    background-color: var(--other-purple);
+}
+
+.btn-delete {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.btn-delete:hover {
+    background-color: var(--dark-red);
+}
+
+.crud {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.crud-content {
+    background-color: var(--surface-elevated);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+.small-crud {
+    max-width: 400px;
+}
+
+.crud-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-danger {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background-color: var(--dark-red);
+}
+
+.foto-preview {
+    margin-top: 0.5rem;
+}
+
+.foto-preview img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    .btn-voltar {
+        position: static;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .form-section {
+        padding-top: 2rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-actions {
+        justify-content: center;
+    }
+}

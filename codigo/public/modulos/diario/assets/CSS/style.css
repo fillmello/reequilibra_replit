@@ -1,0 +1,144 @@
+/* ========== RESET & VARIÁVEIS ========== */
+:root {
+  --cor-primaria: #01AE7D;
+  --cor-secundaria: #0d6efd;
+  --cor-fundo: #C5E0ED;
+  --cor-texto: #2C3E50;
+  --cor-clara: #ffffff;
+  --cor-forte: #967ba4;
+  --cor-escura: #3f3d56;
+  --cor-pastel: #737378;
+  --cor-texto-claro: #f1f1f1;
+  --cor-acentuada: #999;
+  --espacamento-base: 1rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILO GLOBAL ========== */
+body {
+  background-color: var(--cor-fundo);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+#header {
+  height: 86px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#signup {
+  background-color: var(--cor-primaria);
+  transition: all 0.3s;
+  border: none;
+}
+
+#signup:hover {
+  background-color: #018f68;
+}
+
+a.nav-link{
+  padding: 12px;
+}
+
+/* ========== FORMULÁRIO ========== */
+
+
+.btn-status {
+  background-color: var(--cor-primaria);
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+/* ========== LISTA DE DIÁRIOS ========== */
+
+
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card.bg-primary {
+  background-color: var(--cor-primaria)!important;
+  color: white;
+}
+
+/* ========== BOTÕES ========== */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #018f68;
+}
+
+#btnSalvarDiario{
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+}
+
+#listaDiarios {
+  max-height: 42rem;
+  overflow-y: auto; 
+}
+
+#coluna2{
+  height: 42rem;
+  overflow: auto;
+}
+#menuCriarDiario{
+  margin-top: 10rem;
+}
+
+#btnStatus1, #btnStatus2, #btnStatus3, #btnStatus4, #btnStatus5{
+  width: 6%;
+  height: 60%;
+}
+.btn-custom{
+  background-color: var(--cor-primaria);
+  color: white;
+
+}
+
+.bg-purple {
+  background-color: var(--cor-pastel);
+  color: var(--cor-clara);
+}
+/* ========== RESPONSIVO ========== */
+@media (max-width: 992px) {
+  #menuCriarDiario > .row {
+    flex-direction: column;
+  }
+  
+  #menuMobile div {
+    width: 100%!important;
+  }
+}

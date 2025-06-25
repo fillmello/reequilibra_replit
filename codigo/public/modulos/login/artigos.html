@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos sobre saúde mental</title>
+    <link rel="stylesheet" href="/codigo/public/assets/css/artigos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Artigos sobre saúde mental</h1>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Pesquisar artigos...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#" id="all-articles"><i class="fas fa-search"></i> Pesquisar artigos</a></li>
+                        <li><a href="#" id="favorites"><i class="fas fa-heart"></i> Artigos favoritos</a></li>
+                        <li>
+                            <a href="#" id="categories-btn"><i class="fas fa-tags"></i> Categorias <i
+                                    class="fas fa-chevron-down"></i></a>
+                            <ul id="categories-list" class="submenu">
+
+                            </ul>
+                        </li>
+                        <li><a href="#" id="recommendations"><i class="fas fa-lightbulb"></i> Indicações de leitura</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="articles-container">
+                <div id="articles-list">
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p class="modal-meta"><span id="modal-date"></span> - Autor(a): <span id="modal-author"></span></p>
+            <div id="modal-content"></div>
+            <button id="toggle-favorite" class="favorite-btn">Favoritar</button>
+        </div>
+    </div>
+
+    <script src="artigos.html"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Psicólogo - Reequilibra</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="./assets/css/dtlpsicologos.css">
+
+
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global-theme.css" />
+    <link rel="stylesheet" href="../../assets/css/emergencia.css" />
+    <link rel="stylesheet" href="../../assets/css/sidebar.css" />
+    <style>
+.logout-link {
+  color: #dc3545 !important;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem !important;
+}
+
+.logout-link:hover {
+  background: rgba(220, 53, 69, 0.1) !important;
+  color: #dc3545 !important;
+}
+
+[data-theme="dark"] .logout-link {
+  color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .logout-link:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff6b6b !important;
+}
+</style>
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img id="sidebarLogo" src="../../assets/images/logo.png" alt="Logo" />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="../missoes/index.html" class="sidebar-link">
+              <i class="fas fa-home"></i>
+              <span class="sidebar-text">Home</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../forum/index.html" class="sidebar-link active">
+              <i class="fas fa-comments"></i>
+              <span class="sidebar-text">Fórum</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../artigos/artigos.html" class="sidebar-link">
+              <i class="fas fa-newspaper"></i>
+              <span class="sidebar-text">Artigos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../diario/index.html" class="sidebar-link">
+              <i class="fas fa-book"></i>
+              <span class="sidebar-text">Diário</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../meditacao/index.html" class="sidebar-link">
+              <i class="fas fa-brain"></i>
+              <span class="sidebar-text">Área de meditação</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../toDo/index.html" class="sidebar-link">
+              <i class="fas fa-check-square"></i>
+              <span class="sidebar-text">Todo list</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../info_psic/psicologos.html" class="sidebar-link">
+              <i class="fas fa-user"></i>
+              <span class="sidebar-text">Psicólogos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link logout-link" id="sidebarLogout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="sidebar-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <button
+      id="expandSidebarBtn"
+      class="expand-sidebar-btn"
+      style="display: none"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <main class="conteudo-principal">
+        <div class="container">
+            <a href="./psicologos.html" class="btn-voltar">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+
+            <div class="detalhes-container">
+                <div class="carregando">
+                    <p>Carregando informações do psicólogo...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="avaliacoes-container">
+        <div class="container">
+            <div class="info-section">
+                <h2>Avaliações</h2>
+                <div class="avaliacao-item">
+                    <div class="avaliacao-comentarios">
+                        <div class="stars">★★★★★</div>
+                        <strong>Paciente 1</strong>
+                    </div>
+                    <p>Excelente profissional, me ajudou muito a superar minha ansiedade. As sessões foram
+                        transformadoras.</p>
+                </div>
+                <div class="avaliacao-item">
+                    <div class="avaliacao-comentarios">
+                        <div class="stars">★★★☆☆</div>
+                        <strong>Paciente 2</strong>
+                    </div>
+                    <p>Recomendo a todos, ótimo atendimento e abordagem. Me senti acolhido desde a primeira sessão.</p>
+                </div>
+                <div class="avaliacao-item">
+                    <div class="avaliacao-comentarios">
+                        <div class="stars">★★★★☆</div>
+                        <strong>Paciente 3</strong>
+                    </div>
+                    <p>Boa profissional, mas gostaria que as sessões fossem um pouco mais longas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Reequilibra</h3>
+                    <p>
+                        Seu espaço acolhedor e seguro dedicado ao bem-estar emocional.
+                        Transformando vidas através do cuidado.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Psicólogos</a></li>
+                        <li><a href="#">Meditação</a></li>
+                        <li><a href="#">Diário pessoal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Nossa Equipe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reequilibra. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Função para verificar se o usuário está logado
+        function verificaUsuarioCorrente() {
+            const usuarioCorrenteJSON = localStorage.getItem("usuarioLogado");
+            if (!usuarioCorrenteJSON) {
+                // Salva a URL original antes de redirecionar para o login
+                window.location.href = "../login/login.html"; // Redireciona para login
+            }
+        }
+
+        // Chama a função imediatamente ao carregar a página
+        verificaUsuarioCorrente();
+    </script>
+
+    <script src="../../assets/js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="./assets/scripts/ap-psic.js"></script>
+    <script src="../../assets/js/sidebar.js"></script>
+</body>
+</html>

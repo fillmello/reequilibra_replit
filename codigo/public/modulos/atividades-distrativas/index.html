@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades Distrativas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <img src="img/logo1.jpeg" alt="Logo Reequilibra" style="width: 200px; display: block; margin: 0 auto 20px;">
+  <div class="container">
+    <header>
+      <h1>Atividades distrativas</h1>
+      <p>Pausas saudáveis para sua mente</p>
+      
+      <div class="selecao-usuario">
+        <label>👤 Usuário: 
+          <select id="usuario">
+            <option value="admin">Administrador</option>
+            <option value="user">Usuário Comum</option>
+            <option value="rommel">Rommel</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <div class="controle-tempo">
+      <label>⏱ Tempo: 
+        <select id="tempo">
+          <option value="1">1 minuto</option>
+          <option value="3">3 minutos</option>
+          <option value="5" selected>5 minutos</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="atividades"></div>
+
+    <div class="missoes">
+      <h2>📅 Missões Diárias</h2>
+      <ul id="lista-missoes"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

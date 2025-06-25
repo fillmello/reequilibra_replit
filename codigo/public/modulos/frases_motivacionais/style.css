@@ -1,0 +1,216 @@
+:root {
+    --cor-primaria: #01AE7D; 
+    --cor-fundo: #C5E0ED;    
+    --cor-forte: #967ba4;    
+    --cor-texto: #2E3440;    
+    --cor-branco: #FFFFFF;   
+    --cor-destaque: #FFD700; 
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    background-color: var(--cor-branco);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    padding: 2.5rem;
+    margin: 2rem auto;
+}
+
+
+h1, h2 {
+    color: var(--cor-forte);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+
+.frase-container {
+    background: linear-gradient(135deg, rgba(1, 174, 125, 0.1) 0%, rgba(150, 123, 164, 0.1) 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+    border-left: 5px solid var(--cor-primaria);
+    transition: all 0.5s ease;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-gerar {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 12px rgba(1, 174, 125, 0.3);
+}
+
+.btn-gerar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(1, 174, 125, 0.4);
+}
+
+.btn-favorito {
+    background: none;
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.2);
+}
+
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#texto-frase {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border 0.3s;
+}
+
+#texto-frase:focus {
+    outline: none;
+    border-color: var(--cor-forte);
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-salvar {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+}
+
+.btn-cancelar {
+    background-color: var(--cor-branco);
+    color: var(--cor-forte);
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--cor-forte);
+    border-radius: 8px;
+}
+
+
+.lista-frases {
+    margin-top: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+li:hover {
+    transform: translateY(-3px);
+}
+
+.btn-editar, .btn-excluir, .btn-remover-favorito {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-editar {
+    background-color: var(--cor-forte);
+    color: white;
+}
+
+.btn-excluir {
+    background-color: #e74c3c;
+    color: white;
+}
+
+
+#lista-favoritos li {
+    border-left: 4px solid var(--cor-destaque);
+    background-color: rgba(255, 215, 0, 0.05);
+}
+
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .frase-container {
+        font-size: 1.4rem;
+        padding: 1.5rem;
+    }
+}  
+
+
+
+
+

@@ -1,0 +1,71 @@
+.artigos {
+    margin-top: 100px;
+}
+
+.artigos h1 {
+    color: #01ae7d;
+}
+
+.artigos {
+    margin-top: 100px;
+}
+
+.artigos h1 {
+    color: #01ae7d;
+}
+
+
+body {
+    background-color: #dff0f8;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+#confirmarSenha{
+    background-color:#01ae7d !important;
+}
+
+.card,
+.modal-content {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
+}
+
+
+#favorites,
+#categories-collapse a,
+.card-title,
+.card-body button[data-bs-toggle="collapse"] {
+    color: inherit !important;
+}
+
+
+.btn-primary {
+    background-color: #967ba4 !important;
+    border-color: #967ba4 !important;
+}
+
+
+.favorite-icon {
+    color: #dc3545 !important;
+}

@@ -1,0 +1,817 @@
+{
+  "diarios": [
+    {
+      "id": "1",
+      "userid": "1",
+      "data": "2025-04-24",
+      "titulo": "Dia difícil na faculdade",
+      "publico": false,
+      "status": 1,
+      "conteudo": "Hoje foi um dia muito complicado na faculdade. A prova de cálculo foi mais difícil do que eu esperava e acho que não fui bem. Me senti muito ansiosa durante a prova e agora estou com medo do resultado.",
+      "favorito": false
+    },
+    {
+      "id": "2",
+      "userid": 1,
+      "data": "17/06/2025",
+      "titulo": "Dia tranquilo",
+      "publico": false,
+      "status": 2,
+      "conteudo": "Hoje foi um dia tranquilo. Consegui estudar bastante e ainda tive tempo para relaxar assistindo minha série favorita.",
+      "favorito": false
+    },
+    {
+      "id": "3",
+      "userid": "2",
+      "data": "2025-04-22",
+      "titulo": "Dia produtivo no trabalho",
+      "publico": true,
+      "status": 2,
+      "conteudo": "Hoje foi um dia muito produtivo no trabalho. Consegui finalizar um projeto importante e recebi elogios do meu chefe.",
+      "favorito": true
+    },
+    {
+      "id": "4",
+      "userid": "3",
+      "data": "2025-04-21",
+      "titulo": "Dia de reflexão",
+      "publico": false,
+      "status": 3,
+      "conteudo": "Passei o dia refletindo sobre algumas decisões importantes que preciso tomar. Foi um dia introspectivo, mas necessário.",
+      "favorito": false
+    },
+    {
+      "id": "5",
+      "userid": "3",
+      "data": "2025-04-20",
+      "titulo": "Dia de diversão com amigos",
+      "publico": true,
+      "status": 2,
+      "conteudo": "Hoje foi um dia incrível! Passei o dia com meus amigos no parque, fizemos um piquenique e jogamos vôlei. Me senti muito feliz.",
+      "favorito": true
+    },
+    {
+      "id": "6",
+      "userid": "3",
+      "data": "2025-04-19",
+      "titulo": "Dia de descanso",
+      "publico": false,
+      "status": 2,
+      "conteudo": "Hoje foi um dia de descanso total. Fiquei em casa, li um livro e aproveitei para recarregar as energias.",
+      "favorito": false
+    }
+  ],
+  "artigos": [
+    {
+      "id": "2",
+      "titulo": "Depressão:Desafios e tratamento",
+      "data": "21/08/2024",
+      "autor": "Pedro Romero Carvalho",
+      "categoria_id": "4",
+      "texto": "O transtorno depressivo maior, frequentemente conhecido como depressão, é a forma mais reconhecida entre os transtornos depressivos. Os sintomas característicos dessa condição incluem um humor persistente de tristeza, diminuição do interesse nas atividades,  distúrbios  no  sono,  agitação  ou  lentidão  psicomotora,  cansaço  extremo,  e sentimentos de inutilidade ou culpa desproporcional, entre outros.(LOCH et al.,2024).A   depressão   é   um transtorno   de   humor   que   impacta   profundamente   a capacidade de uma pessoa de desempenhar suas atividades diárias e interagir com os outros. Os sintomas da depressão estão frequentemente ligados a uma diminuição nas funções cognitivas. Essa condição pode afetar áreas cognitivas como a aprendizagem e a memória, a atenção e a concentração, as funções executivas, bem como a velocidade de processamento mental.(OLIVEIRAet al., 2024).",
+      "link": "https://bjihs.emnuvens.com.br/bjihs/article/view/3107"
+    },
+    {
+      "id": "6dc1",
+      "titulo": "Estresse e fatores psicossociais",
+      "data": "2010-12-05",
+      "autor": "Ana Lúcia Pallegrini",
+      "categoria_id": "2",
+      "link": "https://www.scielo.br/j/pcp/a/8VdqxG3rYm37knTdFCxXqtm",
+      "texto": "O interesse pelo estudo do estresse no trabalho tem sido crescente na literatura científica, particularmente nos últimos anos. Uma razão para o aumento de pesquisas sobre esse tema está nas repercussões das condições e da organização do trabalho na saúde e no bem-estar dos empregados e, em consequência, no funcionamento e na efetividade das organizações. Na economia, o impacto negativo dessa variável tem sido estimado com base na suposição e nos achados de que trabalhadores estressados diminuem seu desempenho e aumentam os custos das organizações com problemas de saúde, com o aumento do absenteísmo, da rotatividade e do número de acidentes no local de trabalho. Tendo em vista a importância do tema, o presente trabalho se propõe a analisar os modelos teóricos sobre estresse ocupacional e fatores psicossociais. Neste artigo, portanto, apresentaremos os princípios dos principais modelos que discutem a relação entre os fatores psicossociais do trabalho e o estresse ocupacional: modelo demandacontrole, modelo demanda-controle-apoio social, modelo do desequilíbrio esforço-recompensa, modelo ecológico e a proposta do National Institute for Occupational and Health (NIOSH)."
+    },
+    {
+      "titulo": "A percepção do corpo e o autocuidado.",
+      "data": "2025-06-13",
+      "autor": "1 José Roque Junges",
+      "categoria_id": "3",
+      "link": "https://www.scielosp.org/pdf/physis/2020.v30n3/e300318/pt",
+      "texto": "Resumo: Este trabalho apresenta uma pesquisa de\nnatureza qualitativa, que teve como objetivo analisar\na percepção do corpo e o autocuidado em sujeitos\nacometidos por diabetes mellitus 2. Foram entrevistados\ndez participantes, atendidos por uma Estratégia de Saúde\nda Família localizada na região metropolitana de Porto\nAlegre-RS. Como recurso metodológico, utilizou-se a\nentrevista semiestruturada; os dados foram analisados\natravés da análise de conteúdo do tipo temática, proposta\npor Bardin. Como matriz teórica, utilizou-se a perspectiva\nfenomenológica de Merleau-Ponty. A análise das narrativas\npossibilitou a criação de duas categorias: 1) corpo\nalterado: enfrentando o inesperado; 2) corpo assumido:\naprendendo a conviver com a doença. A interpretação dos\ndados revelou que os sujeitos apresentaram atitudes de\nsurpresa, sentimento de tristeza, não aceitação frente às\nalterações do corpo, mas também conformação em relação\nao diagnóstico. Os sujeitos passaram por dificuldades\nalimentares e gerenciamento de medicamentos até\nassumirem o corpo alterado pela incorporação de novos\nhábitos. Como conclusão, destaca-se que somente com\no alinhamento do corpo habitual ao corpo atual, pela\nincorporação dos procedimentos de tratamento, é que a\natitude de autocuidado começa a fazer parte do cotidiano.",
+      "id": "0825"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": "1",
+      "usuario_id": 1,
+      "noticia_id": 1
+    },
+    {
+      "id": "19ac",
+      "usuario_id": 1,
+      "noticia_id": "6"
+    },
+    {
+      "id": "f2c0",
+      "usuario_id": 1,
+      "noticia_id": "825"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Ansiedade"
+    },
+    {
+      "id": "2",
+      "nome": "Estresse"
+    },
+    {
+      "id": "3",
+      "nome": "Autocuidado"
+    },
+    {
+      "id": "4",
+      "nome": "Depressão"
+    },
+    {
+      "id": "5",
+      "nome": "Relacionamentos"
+    }
+  ],
+  "indicacoes": [
+    {
+      "titulo": "Não aguento não aguentar mais",
+      "autor": "Anne Helen Petersen",
+      "link": "https://g.co/kgs/yQe2o9g",
+      "id": "1432"
+    },
+    {
+      "titulo": "A voz na sua cabeça",
+      "autor": "Ethan Kross",
+      "link": "https://g.co/kgs/mCH2jiW",
+      "id": "3d72"
+    }
+  ],
+  "siteMeditacao": {
+    "busca": {
+      "placeholder": "Buscar meditações...",
+      "filtros": [
+        "Ansiedade",
+        "Estresse",
+        "Depressão",
+        "Sono",
+        "Todos"
+      ]
+    },
+    "secaoMeditacoesPopulares": [
+      {
+        "id": 1,
+        "titulo": "Respiração para Ansiedade",
+        "descricao": "Exercício de 5 minutos para acalmar a mente em momentos de crise.",
+        "duracao": "5 min",
+        "nivel": "Iniciante"
+      },
+      {
+        "id": 2,
+        "titulo": "Meditação do Corpo Scan",
+        "descricao": "Percepção corporal para liberar tensões físicas e mentais.",
+        "duracao": "10 min",
+        "nivel": "Intermediário"
+      },
+      {
+        "id": 3,
+        "titulo": "Visualização Guiada",
+        "descricao": "Imagine um lugar seguro para reduzir sintomas depressivos.",
+        "duracao": "15 min",
+        "nivel": "Iniciante"
+      },
+      {
+        "id": 4,
+        "titulo": "Mindfulness para Foco",
+        "descricao": "Treine sua atenção plena para melhorar a concentração.",
+        "duracao": "8 min",
+        "nivel": "Avançado"
+      }
+    ],
+    "playerAudio": {
+      "meditacaoAtual": {
+        "id": 2,
+        "titulo": "Meditação do Corpo Scan",
+        "duracaoTotal": "10 min"
+      },
+      "tempoAtual": "0:00",
+      "tempoTotal": "10:00",
+      "estado": "pausado"
+    }
+  },
+  "contatos": [
+    {
+      "id": "1",
+      "nome": "Bárbara (Mãe)",
+      "telefone": "(31) 99999-9999"
+    },
+    {
+      "id": "2",
+      "nome": "Thales (Amigo)",
+      "telefone": "(31) 98888-8888"
+    },
+    {
+      "id": "3",
+      "nome": "Filipe (Psicólogo)",
+      "telefone": "(31) 97777-7777"
+    }
+  ],
+  "servicosDeSaude": [
+    {
+      "id": "1",
+      "nome": "CAPS AD Leste - São Lucas",
+      "tipo": "CAPS Álcool e Drogas",
+      "endereco": "R. Itaúna, 315 - São Lucas, Belo Horizonte - MG",
+      "telefone": "(31) 3277-6100",
+      "horario": "Seg-Sex: 7h30-17h30"
+    },
+    {
+      "id": "2",
+      "nome": "CAPS III Norte - Venda Nova",
+      "tipo": "CAPS III (24 horas)",
+      "endereco": "Av. Vilarinho, 390 - Venda Nova, Belo Horizonte - MG",
+      "telefone": "(31) 3277-6333",
+      "horario": "24 horas"
+    }
+  ],
+  "atividades": [
+    {
+      "id": "respirar",
+      "nome": "Respiração Guiada",
+      "tipo": "calma",
+      "tempoPadrao": 3,
+      "instrucaoes": "Inspire por 4s, segure por 7s, expire por 8s"
+    },
+    {
+      "id": "desenhar",
+      "nome": "Desenho Livre",
+      "tipo": "criatividade",
+      "tempoPadrao": 5,
+      "ferramentas": [
+        "pincel",
+        "borracha",
+        "12 cores"
+      ]
+    }
+  ],
+  "missoesDiarias": [
+    {
+      "id": "missao1",
+      "descricao": "Complete 1 respiração guiada",
+      "xp": 10,
+      "requisito": "respirar",
+      "concluida": false
+    }
+  ],
+  "psicologos": [
+    {
+      "nome": "Dra. Maria Silva",
+      "crp": "123456/SP",
+      "email": "maria@psicologia.com",
+      "whatsapp": "(11) 91234-5678",
+      "area_atua": "Terapia Comportamental",
+      "descricao": "Psicóloga especialista em Terapia Comportamental, com ampla experiência no tratamento de transtornos de ansiedade, fobias, baixa autoestima e dificuldades de relacionamento. Atua de forma empática e focada em estratégias práticas para promover mudanças positivas na vida dos pacientes.",
+      "local_atend": "Online e Presencial",
+      "cep": "33933360",
+      "horarios": "A Combinar (Whatsapp)",
+      "nota": 5,
+      "img": "https://randomuser.me/api/portraits/women/1.jpg",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "nome": "Dr. Pedro Henrique",
+      "area_atua": "Psicanálise",
+      "descricao": "Psicanalista com foco em escuta profunda e acolhimento. Atua no tratamento de angústias existenciais, conflitos inconscientes e dificuldades emocionais persistentes. Seu trabalho é baseado em uma abordagem reflexiva que visa ampliar o autoconhecimento e promover transformações duradouras.",
+      "crp": "654321/SP",
+      "email": "pedro@psicologia.com",
+      "local_atend": "Presencial",
+      "cep": "38067540",
+      "horarios": "9h às 18h",
+      "nota": 4.7,
+      "whatsapp": "(11) 98765-4321",
+      "img": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "id": "3",
+      "nome": "Dra. Ana Paula",
+      "area_atua": "Terapia Cognitivo-Comportamental",
+      "descricao": "Atua com foco em reestruturação cognitiva e mudança de padrões de comportamento que geram sofrimento. Possui experiência no atendimento de casos de depressão, ansiedade, TOC e desenvolvimento de habilidades sociais. Oferece um espaço seguro e colaborativo para que o paciente alcance equilíbrio emocional.",
+      "crp": "789012/SP",
+      "email": "ana@psicologia.com",
+      "local_atend": "Online",
+      "cep": "",
+      "horarios": "13h às 20h",
+      "nota": 4.8,
+      "whatsapp": "(19) 92345-6789",
+      "img": "https://randomuser.me/api/portraits/women/3.jpg"
+    }
+  ],
+  "comunidades": [
+    {
+      "id": "1",
+      "nome": "Ansiedade",
+      "descricao": "Espaço para compartilhar experiências e dicas sobre ansiedade.",
+      "posts": [
+        {
+          "id": 101,
+          "autor": "Anônimo",
+          "dataHora": "2024-04-25T23:39:00",
+          "conteudo": "Estou passando por uma crise de ansiedade, alguém já passou por isso?",
+          "likes": 5,
+          "respostas": [
+            {
+              "id": 1001,
+              "autor": "Fábio",
+              "dataHora": "2024-04-26T07:43:00",
+              "conteudo": "Já passei por isso. Procure técnicas de respiração profunda, ajudam bastante!",
+              "likes": 2
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "autor": "Maria",
+          "dataHora": "2024-04-26T10:00:00",
+          "conteudo": "Quais são os melhores exercícios para aliviar a ansiedade?",
+          "likes": 10,
+          "respostas": []
+        },
+        {
+          "id": 103,
+          "autor": "Carlos",
+          "dataHora": "2024-04-27T15:30:00",
+          "conteudo": "Compartilhem dicas de livros ou filmes que ajudam com a ansiedade.",
+          "likes": 3,
+          "respostas": []
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Depressão",
+      "descricao": "Discussões e apoio sobre depressão.",
+      "posts": [
+        {
+          "id": 201,
+          "autor": "Ana",
+          "dataHora": "2024-04-28T09:00:00",
+          "conteudo": "Sinto que estou perdendo a esperança, alguém se sente assim?",
+          "likes": 7,
+          "respostas": []
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Burnout",
+      "descricao": "Espaço para falar sobre estresse e esgotamento profissional.",
+      "posts": []
+    },
+    {
+      "id": "4",
+      "nome": "Desabafo",
+      "descricao": "Conte livremente o que está sentindo.",
+      "posts": []
+    },
+    {
+      "id": "5",
+      "nome": "Acadêmico",
+      "descricao": "Discussão sobre saúde mental no ambiente acadêmico.",
+      "posts": []
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "a9d3",
+      "login": "fillmello",
+      "senha": "123",
+      "nome": "Filipe",
+      "email": "fliusjkgfjk@gmail.com"
+    },
+    {
+      "id": "1750705277288",
+      "nome": "Barbara Amorim",
+      "login": "Barbara",
+      "email": "barbara@gmail.com",
+      "senha": "1212",
+      "tipo": "usuario"
+    },
+    {
+      "id": "1750782661739",
+      "nome": "henriq",
+      "login": "henriq",
+      "email": "henriq@gmail.com",
+      "senha": "123",
+      "tipo": "usuario"
+    },
+    {
+      "id": "1750810424144",
+      "nome": "Rommel Carneiro",
+      "login": "rommel",
+      "email": "rommelpuc@gmail.com",
+      "senha": "123",
+      "tipo": "usuario"
+    }
+  ],
+  "mensagens": [
+    {
+      "id": "1",
+      "mensagem": "Sou grato pela minha família",
+      "data": "22/05/2025"
+    },
+    {
+      "id": "2",
+      "mensagem": "Agradeço pelos meus amigos",
+      "data": "15/05/2025"
+    },
+    {
+      "id": "1",
+      "mensagem": "Hoje fiz algo que me deixou feliz",
+      "data": "20/05/2025"
+    }
+  ],
+  "lista_atividades": [
+    {
+      "id": "1",
+      "usuarioId": 2,
+      "nome": "Caminhar no parque",
+      "descricao": "Respirar ar puro e ouvir os pássaros",
+      "duracao": "20 minutos",
+      "tag": "Alívio da ansiedade"
+    },
+    {
+      "id": "2",
+      "usuarioId": 3,
+      "nome": "Ouvir música relaxante",
+      "descricao": "Colocar uma playlist lo-fi para relaxar",
+      "duracao": "10 minutos",
+      "tag": "Relaxar"
+    }
+  ],
+  "recompensas": [
+    {
+      "id": "1",
+      "titulo": "Sessão de Terapia",
+      "descricao": "Complete sua sessão de terapia semanal",
+      "icone": "fas fa-comments",
+      "pontos": 100,
+      "tipo": "terapia",
+      "completa": false
+    },
+    {
+      "id": "2",
+      "titulo": "Diário de Humor",
+      "descricao": "Registre seu humor e pensamentos no diário",
+      "icone": "fas fa-book",
+      "pontos": 50,
+      "tipo": "diario",
+      "completa": false
+    },
+    {
+      "id": "3",
+      "titulo": "Meditação Guiada",
+      "descricao": "Complete uma sessão de meditação de 10 minutos",
+      "icone": "fas fa-spa",
+      "pontos": 70,
+      "tipo": "meditacao",
+      "completa": false
+    },
+    {
+      "id": "4",
+      "titulo": "Exercício Físico",
+      "descricao": "Pratique pelo menos 30 minutos de exercício",
+      "icone": "fas fa-running",
+      "pontos": 80,
+      "tipo": "exercicio",
+      "completa": false
+    },
+    {
+      "id": "5",
+      "titulo": "Gratidão",
+      "descricao": "Anote 3 coisas pelas quais você é grato hoje",
+      "icone": "fas fa-heart",
+      "pontos": 40,
+      "tipo": "diario",
+      "completa": false
+    }
+  ],
+  "medalhas": [
+    {
+      "id": "1",
+      "nome": "Iniciante",
+      "icone": "fas fa-seedling",
+      "descricao": "Complete sua primeira atividade",
+      "conquistada": true
+    },
+    {
+      "id": "2",
+      "nome": "Terapeuta",
+      "icone": "fas fa-comments",
+      "descricao": "Complete 5 sessões de terapia",
+      "objetivo": 5,
+      "progresso": 0,
+      "conquistada": false
+    },
+    {
+      "id": "3",
+      "nome": "Meditador",
+      "icone": "fas fa-spa",
+      "descricao": "Complete 10 meditações",
+      "objetivo": 10,
+      "progresso": 0,
+      "conquistada": false
+    },
+    {
+      "id": "4",
+      "nome": "Escritor",
+      "icone": "fas fa-book",
+      "descricao": "Complete 7 entradas no diário",
+      "objetivo": 7,
+      "progresso": 0,
+      "conquistada": false
+    },
+    {
+      "id": "5",
+      "nome": "Atleta",
+      "icone": "fas fa-running",
+      "descricao": "Complete 15 sessões de exercício",
+      "objetivo": 15,
+      "progresso": 0,
+      "conquistada": false
+    },
+    {
+      "id": "6",
+      "nome": "Grato",
+      "icone": "fas fa-heart",
+      "descricao": "Complete 30 dias de gratidão",
+      "objetivo": 30,
+      "progresso": 0,
+      "conquistada": false
+    },
+    {
+      "id": "7",
+      "nome": "Mestre",
+      "icone": "fas fa-crown",
+      "descricao": "Alcance o nível 10",
+      "objetivo": 10,
+      "progresso": 1,
+      "conquistada": false
+    },
+    {
+      "id": "8",
+      "nome": "Série de 7 dias",
+      "icone": "fas fa-calendar-check",
+      "descricao": "Complete atividades por 7 dias consecutivos",
+      "conquistada": true
+    }
+  ],
+  "frases de apoio emocional": [
+    {
+      "id": "1",
+      "texto": "Acredite em você primeiro. ✨",
+      "autor": "Sistema",
+      "categoria": "motivacional"
+    },
+    {
+      "id": "2",
+      "texto": "Erros são degraus para o aprendizado. 📚",
+      "autor": "Desconhecido",
+      "categoria": "reflexão"
+    },
+    {
+      "id": "3",
+      "texto": "Pequenos progressos ainda são progressos. 🐢",
+      "autor": "Sistema",
+      "categoria": "produtividade"
+    }
+  ],
+  "forums": [
+    {
+      "id": "1",
+      "title": "Como lidar com crises de ansiedade no trabalho?",
+      "content": "Gostaria de compartilhar e ouvir experiências sobre como vocês lidam com momentos de ansiedade durante o trabalho. Ultimamente tenho sentido muita pressão e isso tem afetado minha produtividade e bem-estar. Quais técnicas vocês utilizam para manter a calma em situações estressantes?",
+      "author": "JoanaP",
+      "createdAt": "2023-12-01T08:30:00.000Z",
+      "isHealthProfessional": false,
+      "commentsCount": 2
+    },
+    {
+      "id": "2",
+      "title": "Dicas para melhorar a qualidade do sono",
+      "content": "Como psicólogo, gostaria de compartilhar algumas técnicas que podem ajudar a melhorar a qualidade do sono. Muitos dos meus pacientes relatam dificuldades para dormir e isso impacta significativamente sua saúde mental. Vamos discutir hábitos saudáveis e estratégias eficazes para uma boa noite de sono.",
+      "author": "Dr. CarlosS",
+      "createdAt": "2023-11-28T19:15:00.000Z",
+      "isHealthProfessional": true,
+      "commentsCount": 2
+    },
+    {
+      "id": "3",
+      "title": "Como ajudar um amigo com depressão???",
+      "content": "Meu amigo está passando por um momento muito difícil e gostaria de saber como posso apoiá-lo da melhor forma. Tenho notado mudanças no comportamento dele e suspeito que possa ser depressão. Como posso abordar o assunto sem ser invasivo e realmente ajudar?",
+      "author": "MariaL",
+      "createdAt": "2023-11-25T11:20:00.000Z",
+      "isHealthProfessional": false,
+      "commentsCount": 2
+    }
+  ],
+  "memories": [
+    {
+      "id": "2",
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1200&h=400&fit=crop",
+      "caption": "Lendo um bom livro ☕ A leitura sempre foi meu refúgio nos momentos difíceis.",
+      "createdAt": "2024-12-14T15:45:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=400&fit=crop",
+      "caption": "Sessão de yoga matinal 🧘‍♀️ Começar o dia cuidando da mente e do corpo faz toda diferença!",
+      "createdAt": "2024-12-13T08:20:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "forumId": "1",
+      "content": "Quando sinto ansiedade no trabalho, pratico respiração profunda por 5 minutos. Também ajuda dar uma pequena caminhada, mesmo que seja apenas até o bebedouro.",
+      "author": "PedroM",
+      "isHealthProfessional": false,
+      "createdAt": "2023-12-02T10:15:00.000Z"
+    },
+    {
+      "id": "2",
+      "forumId": "1",
+      "content": "Como psicóloga, recomendo a técnica 5-4-3-2-1: identifique 5 coisas que você vê, 4 que pode tocar, 3 que pode ouvir, 2 que pode cheirar e 1 que pode provar. Isso ajuda a ancorar no presente e reduzir a ansiedade.",
+      "author": "Dra. Ana Silva",
+      "isHealthProfessional": true,
+      "createdAt": "2023-12-03T14:30:00.000Z"
+    },
+    {
+      "id": "3",
+      "forumId": "2",
+      "content": "Tenho seguido uma rotina rigorosa de sono e realmente ajudou. Deito e levanto sempre no mesmo horário, mesmo nos fins de semana.",
+      "author": "LucasR",
+      "isHealthProfessional": false,
+      "createdAt": "2023-11-29T08:45:00.000Z"
+    },
+    {
+      "id": "5",
+      "forumId": "2",
+      "content": "Como neurologista especializado em medicina do sono, recomendo fortemente manter o quarto escuro, silencioso e em temperatura agradável (entre 18-20°C). O ambiente tem grande impacto na qualidade do sono.",
+      "author": "Dr. Roberto Menezes",
+      "isHealthProfessional": true,
+      "createdAt": "2023-12-01T11:05:00.000Z"
+    },
+    {
+      "id": "6",
+      "forumId": "3",
+      "content": "O mais importante é ouvir sem julgar. Muitas vezes, só precisamos de alguém que nos escute de verdade. Ofereça sua presença, mas respeite quando a pessoa precisar de espaço.",
+      "author": "Dra. Juliana Costa",
+      "isHealthProfessional": true,
+      "createdAt": "2023-11-26T16:40:00.000Z"
+    },
+    {
+      "id": "1749558073098",
+      "forumId": "3",
+      "author": "asdas",
+      "content": "asdasd",
+      "isHealthProfessional": true,
+      "createdAt": "2025-06-10T12:21:13.098Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Usuario Teste",
+      "email": "usuario@teste.com",
+      "isHealthProfessional": false
+    }
+  ],
+  "tiposDeAtividade": [
+    {
+      "id": "terapia",
+      "nome": "Terapia",
+      "xp": 50,
+      "icone": "fas fa-comments"
+    },
+    {
+      "id": "exercicio",
+      "nome": "Exercício",
+      "xp": 40,
+      "icone": "fas fa-dumbbell"
+    },
+    {
+      "id": "meditacao",
+      "nome": "Meditação",
+      "xp": 30,
+      "icone": "fas fa-spa"
+    },
+    {
+      "id": "diario",
+      "nome": "Diário",
+      "xp": 20,
+      "icone": "fas fa-book"
+    },
+    {
+      "id": "gratidao",
+      "nome": "Gratidão",
+      "xp": 15,
+      "icone": "fas fa-heart"
+    }
+  ],
+  "gamificacao_usuarios": [
+    {
+      "id": "1",
+      "userId": "a9d3",
+      "level": 1,
+      "xp": 50,
+      "currentLevelXP": 50,
+      "nextLevelXP": 500,
+      "consecutiveDays": 1,
+      "lastActivityDate": "2025-06-25"
+    },
+    {
+      "id": "e3b8",
+      "userId": "1750810424144",
+      "level": 1,
+      "xp": 0,
+      "currentLevelXP": 0,
+      "nextLevelXP": 500,
+      "consecutiveDays": 0,
+      "lastActivityDate": null
+    }
+  ],
+  "atividades_usuarios": [
+    {
+      "id": "1",
+      "userId": "a9d3",
+      "type": "exercicio",
+      "date": "2025-01-15",
+      "notes": "Caminhada de 30 minutos",
+      "xp": 50,
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "fc1a",
+      "type": "terapia",
+      "date": "2025-06-25",
+      "notes": "TOP",
+      "xp": 50,
+      "userId": "a9d3",
+      "createdAt": "2025-06-25T01:02:36.985Z"
+    }
+  ],
+  "conquistas_usuarios": [
+    {
+      "id": "1",
+      "userId": "a9d3",
+      "conquistaId": "1",
+      "conquistada": true,
+      "dataConquista": "2025-01-15T10:00:00.000Z",
+      "progresso": 1
+    },
+    {
+      "id": "805c",
+      "userId": "a9d3",
+      "conquistaId": "2",
+      "progresso": 1
+    },
+    {
+      "id": "0aa1",
+      "userId": "a9d3",
+      "conquistaId": "3",
+      "progresso": 0
+    },
+    {
+      "id": "6e7a",
+      "userId": "a9d3",
+      "conquistaId": "4",
+      "progresso": 0
+    },
+    {
+      "id": "6ee2",
+      "userId": "a9d3",
+      "conquistaId": "5",
+      "progresso": 1
+    },
+    {
+      "id": "db70",
+      "userId": "a9d3",
+      "conquistaId": "6",
+      "progresso": 0
+    },
+    {
+      "id": "4dd3",
+      "userId": "a9d3",
+      "conquistaId": "7",
+      "progresso": 1
+    }
+  ],
+  "recompensas_usuarios": [
+    {
+      "id": "1",
+      "userId": "a9d3",
+      "recompensaId": "1",
+      "completa": true,
+      "dataCompleta": "2025-06-25T01:02:37.026Z"
+    }
+  ]
+}

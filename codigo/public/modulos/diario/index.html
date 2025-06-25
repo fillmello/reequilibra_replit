@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reequilibra - Diário Pessoal</title>
+    <link rel="stylesheet" href="../../assets/css/global-theme.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="stylesheet" href="./assets/CSS/style2.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../assets/css/emergencia.css" />
+    <link rel="stylesheet" href="../../assets/css/sidebar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      i{
+        color: #666666 !important;
+      }
+.logout-link {
+  color: #dc3545 !important;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem !important;
+}
+
+.logout-link:hover {
+  background: rgba(220, 53, 69, 0.1) !important;
+  color: #dc3545 !important;
+}
+
+[data-theme="dark"] .logout-link {
+  color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .logout-link:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff6b6b !important;
+}
+
+/* Botão salvar diário */
+#btnSalvarDiario {
+  background-color: var(--primary-green) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+#btnSalvarDiario:hover {
+  background-color: #018f68 !important;
+}
+
+/* Botões customizados */
+.btn-custom {
+  background-color: var(--primary-green) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-custom:hover {
+  background-color: #018f68 !important;
+  color: white !important;
+}
+
+/* Estilos para ícones dos botões */
+.btn i {
+  color: #6c757d !important;
+  transition: color 0.3s ease;
+}
+
+.btn:hover i {
+  color: var(--primary-green) !important;
+}
+
+.btn-custom i {
+  color: white !important;
+}
+
+.btn-custom:hover i {
+  color: white !important;
+}
+
+.btn-danger i {
+  color: white !important;
+}
+
+.btn-danger:hover i {
+  color: white !important;
+}
+
+#btnSalvarDiario i {
+  color: white !important;
+}
+
+/* Aumentar tamanho dos botões de status */
+#btnStatus1, #btnStatus2, #btnStatus3, #btnStatus4, #btnStatus5 {
+  min-width: 55px !important;
+  height: 55px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+</style>
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img id="sidebarLogo" src="../../assets/images/logo.png" alt="Logo" />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="../missoes/index.html" class="sidebar-link">
+              <i class="fas fa-home"></i>
+              <span class="sidebar-text">Home</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../forum/index.html" class="sidebar-link">
+              <i class="fas fa-comments"></i>
+              <span class="sidebar-text">Fórum</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../artigos/artigos.html" class="sidebar-link">
+              <i class="fas fa-newspaper"></i>
+              <span class="sidebar-text">Artigos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../diario/index.html" class="sidebar-link active">
+              <i class="fas fa-book"></i>
+              <span class="sidebar-text">Diário</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../meditacao/index.html" class="sidebar-link">
+              <i class="fas fa-brain"></i>
+              <span class="sidebar-text">Área de meditação</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../toDo/index.html" class="sidebar-link">
+              <i class="fas fa-check-square"></i>
+              <span class="sidebar-text">Todo list</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../info_psic/psicologos.html" class="sidebar-link">
+              <i class="fas fa-user"></i>
+              <span class="sidebar-text">Psicólogos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link logout-link" id="sidebarLogout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="sidebar-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <button
+      id="expandSidebarBtn"
+      class="expand-sidebar-btn"
+      style="display: none"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="main-wrapper" id="mainWrapper">
+      <main class="container" style="margin-top: 50px">
+        <div id="menuCriarDiario" class="row">
+          <!-- COLUNA 1 -->
+          <div class="col-lg-8 bg-white p-4">
+            <h3 class="mb-4">Título</h3>
+            <div class="mb-4">
+              <input
+                id="tituloDiario"
+                type="text"
+                class="form-control fs-3"
+                placeholder="Título do diário"
+              />
+            </div>
+
+            <div class="d-flex justify-content-between mb-4">
+              <div
+                id="status"
+                class="d-flex justify-content-center gap-5 mb-4"
+              >
+                <h3 class="mb-3">Como está se sentindo hoje?</h3>
+              </div>
+              <div class="ms-4 d-flex gap-2">
+                <button
+                  id="btnStatus1"
+                  class="btn btn-light border border-secondary"
+                  onclick="defStatusDiario(1)"
+                >
+                  1
+                </button>
+                <button
+                  id="btnStatus2"
+                  class="btn btn-light border border-secondary"
+                  onclick="defStatusDiario(2)"
+                >
+                  2
+                </button>
+                <button
+                  id="btnStatus3"
+                  class="btn btn-light border border-secondary"
+                  onclick="defStatusDiario(3)"
+                >
+                  3
+                </button>
+                <button
+                  id="btnStatus4"
+                  class="btn btn-light border border-secondary"
+                  onclick="defStatusDiario(4)"
+                >
+                  4
+                </button>
+                <button
+                  id="btnStatus5"
+                  class="btn btn-light border border-secondary"
+                  onclick="defStatusDiario(5)"
+                >
+                  5
+                </button>
+              </div>
+            </div>
+
+            <h3 class="mb-3">Escreva sobre o que quiser</h3>
+            <div class="mb-4">
+              <textarea
+                id="textoDiario"
+                class="form-control fs-4"
+                placeholder="..."
+                rows="6"
+              ></textarea>
+            </div>
+
+            <button type="submit" id="btnSalvarDiario" class="btn w-100">
+              Salvar Diário
+            </button>
+          </div>
+
+          <!-- COLUNA 2 -->
+          <div id="coluna2" class="col-lg-4 bg-light p-4">
+            <div class="d-flex justify-content-between mb-3">
+              <h3>Meus Diários</h3>
+              <div>
+                <button
+                  onclick="limpaCampos(); noDiarySelected();"
+                  class="btn btn-custom"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+                <button
+                  onclick="deleteDiario(selectedDiario, listaDiarios)"
+                  class="btn btn-danger"
+                >
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="diario1"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Emergency Button - Fixed Position -->
+    <button id="emergencyBtn" class="emergency-btn">
+      <i class="fas fa-exclamation-triangle"></i>
+    </button>
+
+    <!-- Modal de emergência -->
+    <div id="emergencyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-heart-pulse"></i> EMERGÊNCIA</h2>
+          <button id="closeModal" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="emergency-grid">
+          <div class="emergency-card cvv" onclick="callCVV()">
+            <div class="card-icon"><i class="fas fa-phone"></i></div>
+            <div class="card-content">
+              <h3>CVV 188</h3>
+              <p>24h gratuito</p>
+            </div>
+          </div>
+          <div class="emergency-card contacts" onclick="showContacts()">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <div class="card-content">
+              <h3>Contatos</h3>
+              <p>Pessoas próximas</p>
+            </div>
+          </div>
+          <div class="emergency-card samu" onclick="callSAMU()">
+            <div class="card-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="card-content">
+              <h3>SAMU 192</h3>
+              <p>Emergência médica</p>
+            </div>
+          </div>
+          <div class="emergency-card caps" onclick="showServices()">
+            <div class="card-icon"><i class="fas fa-hospital"></i></div>
+            <div class="card-content">
+              <h3>CAPS BH</h3>
+              <p>Saúde mental</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de contatos -->
+    <div id="contactsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-users"></i> CONTATOS DE CONFIANÇA</h2>
+          <button onclick="closeModal('contactsModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="contacts-actions">
+          <button onclick="showAddContact()" class="add-contact-btn">
+            <i class="fas fa-plus"></i> Adicionar Contato
+          </button>
+        </div>
+        <div id="contactsList" class="contacts-list"></div>
+        <div id="noContacts" class="no-contacts" style="display: none">
+          <i class="fas fa-user-plus"></i>
+          <p>Nenhum contato cadastrado</p>
+          <small>Adicione pessoas de confiança para emergências</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para adicionar contato -->
+    <div id="addContactModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="addContactTitle">
+            <i class="fas fa-user-plus"></i> ADICIONAR CONTATO
+          </h2>
+          <button onclick="closeModal('addContactModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="contactName">Nome:</label>
+            <input
+              type="text"
+              id="contactName"
+              placeholder="Ex: Maria (Mãe)"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Telefone:</label>
+            <input
+              type="tel"
+              id="contactPhone"
+              placeholder="(31) 99999-9999"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactRelation">Relação:</label>
+            <select id="contactRelation">
+              <option value="Família">Família</option>
+              <option value="Amigo(a)">Amigo(a)</option>
+              <option value="Namorado(a)">Namorado(a)</option>
+              <option value="Cônjuge">Cônjuge</option>
+              <option value="Colega">Colega</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="save-btn">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button
+              type="button"
+              onclick="closeModal('addContactModal')"
+              class="cancel-btn"
+            >
+              <i class="fas fa-times"></i> Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de serviços -->
+    <div id="servicesModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-hospital"></i> SERVIÇOS BH</h2>
+          <button onclick="closeModal('servicesModal')" class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <strong>CAPS Pampulha</strong>
+              <span>Centro de Atenção Psicossocial</span>
+              <small>(31) 3277-7004</small>
+            </div>
+            <button onclick="callService('31327777004')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <strong>Hospital João XXIII</strong>
+              <span>Emergência psiquiátrica 24h</span>
+              <small>(31) 3239-9200</small>
+            </div>
+            <button onclick="callService('31323999200')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <strong>CAPS Centro</strong>
+              <span>Rua Tupis, 149 - Centro</span>
+              <small>(31) 3277-5208</small>
+            </div>
+            <button onclick="callService('31327775208')" class="call-btn">
+              <i class="fas fa-phone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function verificaUsuarioCorrente() {
+        const usuarioCorrenteJSON = localStorage.getItem("usuarioLogado");
+        if (!usuarioCorrenteJSON) {
+          window.location.href = "../login/login.html";
+        }
+      }
+
+      verificaUsuarioCorrente();
+
+      document.getElementById("diario1").innerHTML = "";
+
+      let concatenador = "";
+
+      function listaDiarios() {
+        let concatenador = "";
+        return new Promise((resolve, reject) => {
+          fetch(diariosUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              let diarioContainer = document.getElementById("diario1");
+              diarioContainer.innerHTML = "";
+
+              data.forEach((diario) => {
+                concatenador += `
+                    <div id="card${diario.id}" onclick="selecionaDiario(${diario.id}); noDiarySelected()" class="bg-light card mb-3 shadow-lg">
+                        <h5 class="card-title text-start ps-3">${diario.titulo}</h5>
+                        <p class="card-subtitle text-start ps-3">Criado em: ${diario.data} - Status: ${diario.status}</p>
+                        <p class=" text-start ps-3">${diario.conteudo}</p>
+                    </div>
+                `;
+              });
+
+              diarioContainer.innerHTML = concatenador;
+              resolve();
+            })
+            .catch((error) => {
+              console.error("Erro ao carregar diários:", error);
+            });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        noDiarySelected();
+        listaDiarios();
+      });
+    </script>
+
+    <script src="../../assets/js/theme-manager.js"></script>
+    <script src="../../assets/js/emergencia.js"></script>
+    <script src="../../assets/js/sidebar.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="./assets/scripts/app.js"></script>
+    <script>
+      document.getElementById('sidebarLogout').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Tem certeza que deseja sair?')) {
+          localStorage.removeItem('usuarioLogado');
+          sessionStorage.removeItem('usuarioCorrente');
+          window.location.href = '../login/login.html';
+        }
+      });
+    </script>
+  </body>
+</html>

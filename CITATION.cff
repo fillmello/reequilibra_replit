@@ -1,0 +1,38 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: reequilibra
+authors:
+  - family-names: Melo
+    given-names: Filipe
+  - family-names: Jose Rodrigues Leal
+    given-names: Anderson
+  - family-names: Amorim Braz
+    given-names: Bárbara
+  - family-names: Silveira Luz Rocha
+    given-names: Henrique
+  - family-names: Gabriel Ferreira da Silva 
+    given-names: Lucas
+  - family-names: Pereira Leite
+    given-names:Thales
+  - family-names: Tianyang Ji
+    given-names: Vitor
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Silva Tavares
+    given-names: Cleiton
+keywords:
+  - Mental Health
+  - Psychologist 
+  - Diary 
+  - Social engagement
+  - Health care 
+  - Gamification
+
+repository-code: 
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2022-07-14

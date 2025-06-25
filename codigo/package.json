@@ -1,0 +1,16 @@
+{
+  "name": "codigo",
+  "version": "1.0.0",
+  "description": "Essa é a pasta para a manter o programa que vocês vão construir no contexto dessa disciplina.",
+  "main": "index.js",
+  "scripts": {
+    "start": "Json-server ./db/db.json --static ./public --port 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

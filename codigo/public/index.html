@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reequilibra</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/global-theme.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <script src="modulos/login/scripts/login.js"></script>
+
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <a href="#home">
+            <img
+              src="./assets/images/logo.png"
+              alt="Reequilibra"
+              class="logo"
+              id="mainLogo"
+            />
+          </a>
+        </div>
+        
+        <div class="nav-center">
+          <div class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link">Início</a>
+            <a href="#about" class="nav-link">Sobre</a>
+            <a href="#services" class="nav-link">Serviços</a>
+            <a href="#testimonials" class="nav-link">Depoimentos</a>
+          </div>
+        </div>
+        
+        <div class="nav-actions">
+          <a id="loginBtn" href="./modulos/login/login.html" class="nav-link">Login</a>
+          <a id="signupBtn" href="./modulos/login/cadastro.html" class="btn btn-outline">Cadastro</a>
+          <a id="logoutBtn" onclick="logoutUser()" class="btn btn-danger" style="display: none;">Logout</a>
+          <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+          <div class="mobile-nav-links">
+            <a href="#home" class="mobile-nav-link">Início</a>
+            <a href="#about" class="mobile-nav-link">Sobre</a>
+            <a href="#services" class="mobile-nav-link">Serviços</a>
+            <a href="#testimonials" class="mobile-nav-link">Depoimentos</a>
+          </div>
+          <div class="mobile-actions">
+            <a href="./modulos/login/login.html" class="btn btn-outline">Login</a>
+            <a href="./modulos/login/cadastro.html" class="btn btn-green">Cadastro</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Bem-vindo ao <span class="brand-name">Reequilibra</span>
+          </h1>
+          <p class="hero-description">
+            Um espaço acolhedor e seguro dedicado ao seu bem-estar emocional.
+            Encontre o equilíbrio que você precisa para uma vida mais plena e
+            saudável.
+          </p>
+          <div class="hero-buttons">
+            <a href="./modulos/login/index.html" class="btn btn-green">
+              <i class="fas fa-play"></i> Começar Agora
+            </a>
+            <button class="btn btn-secondary" id="saibaMais">
+              <i class="fas fa-info-circle"></i> Saiba Mais
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card card-1">
+            <div class="card-icon">🧘‍♀️</div>
+            <span>Meditação</span>
+          </div>
+
+          <div class="floating-card card-2">
+            <div class="card-icon">💚</div>
+            <span>Bem-estar</span>
+          </div>
+          <div class="floating-card card-3">
+            <div class="card-icon">🌱</div>
+            <span>Crescimento</span>
+          </div>
+          <div class="hero-circle"></div>
+          <div class="hero-gradient"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Por que escolher o Reequilibra?</h2>
+          <p class="section-subtitle">
+            Descubra como podemos transformar sua jornada de bem-estar
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Ambiente Seguro</h3>
+            <p>
+              Um espaço protegido onde você pode se expressar livremente sem
+              julgamentos, com total privacidade e confidencialidade.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h3>Suporte</h3>
+            <p>
+              Em caso de emergência, iremos te sugerir psicólogos altamente
+              qualificados, prontos para te ajudar, tal como ligação direta para
+              o CVV.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Crescimento Pessoal</h3>
+            <p>
+              Ferramentas e recursos personalizados para seu desenvolvimento
+              emocional e crescimento pessoal contínuo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">
+            Recursos completos para o cuidado com sua saúde mental
+          </p>
+        </div>
+        <div class="services-grid">
+          <a href="#">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="service-content">
+                <h3>Suporte de Emergência</h3>
+                <p>
+                  Ajuda imediata com acesso rápido a profissionais e recursos
+                  essenciais.
+                </p>
+                <ul>
+                  <li>Ligação direta para o CVV</li>
+                  <li>Mapa com psicólogos e psiquiatras</li>
+                  <li>Contatos de apoio emergencial</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+
+          <a href="./modulos/missoes/index.html">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="service-content">
+                <h3>Gamificação</h3>
+                <p>
+                  Transforme sua jornada de bem-estar em uma experiência
+                  interativa e motivadora.
+                </p>
+                <ul>
+                  <li>Missões e desafios diários</li>
+                  <li>Recompensas e conquistas</li>
+                  <li>Progresso personalizado</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+
+          <a href="modulos/forum/index.html">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="service-content">
+                <h3>Fórum</h3>
+                <p>
+                  Espaço seguro para troca de experiências, apoio e aprendizado
+                  coletivo.
+                </p>
+                <ul>
+                  <li>Debates moderados</li>
+                  <li>Comunidade acolhedora</li>
+                  <li>Interação com especialistas</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+
+          <a href="./modulos/info_psic/psicologos.html">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-spa"></i>
+              </div>
+              <div class="service-content">
+                <h3>Psicólogos Disponíveis</h3>
+                <p>
+                  Espaço dedicado para encontrar e interagir com profissionais
+                  da psicologia.
+                </p>
+                <ul>
+                  <li>Perfil completo dos psicólogos</li>
+                  <li>Opção para agendar consultas</li>
+                  <li>Acesso rápido a informações e especialidades</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+
+          <a href="./modulos/artigos/artigos.html">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <div class="service-content">
+                <h3>Artigos de Saúde Mental</h3>
+                <p>
+                  Conteúdo informativo baseado em ciência e práticas
+                  atualizadas.
+                </p>
+                <ul>
+                  <li>Artigos e publicações</li>
+                  <li>Dicas de bem-estar</li>
+                  <li>Conteúdo feito por quem entende do assunto</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+
+          <a href="./modulos/diario/index.html">
+            <div class="service-card">
+              <div class="service-image">
+                <i class="fas fa-pen"></i>
+              </div>
+              <div class="service-content">
+                <h3>Diário Pessoal</h3>
+                <p>
+                  Espaço seguro para registrar emoções, reflexões e conquistas
+                  diárias.
+                </p>
+                <ul>
+                  <li>Registros privados e confidenciais</li>
+                  <li>Ferramentas de autoconhecimento</li>
+                  <li>Acompanhamento de progresso</li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O que nossos usuários dizem</h2>
+          <p class="section-subtitle">
+            Histórias reais de transformação e crescimento
+          </p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "O Reequilibra é uma iniciativa muito importante para a
+                sociedade e tenho orgulho de fazer parte dessa comunidade."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div class="author-info">
+                <h4>Maria Silva</h4>
+                <span>Psicóloga</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "O suporte da comunidade, principalmente em ter um sistema de
+                gamificação, ajudou muito na minha recuperação."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div class="author-info">
+                <h4>João Santos</h4>
+                <span>Engenheiro de Software</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "O Reequilibra mudou minha vida. Encontrei um espaço seguro para
+                trabalhar minhas questões emocionais e hoje me sinto muito mais
+                equilibrada e confiante."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div class="author-info">
+                <h4>Ana Costa</h4>
+                <span>Estudante</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Pronto para começar sua jornada?</h2>
+          <p>
+            Dê o primeiro passo em direção ao seu bem-estar emocional. Nossa
+            comunidade está aqui para te apoiar.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-secondary btn-large">Começar Agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-logo">Reequilibra</h3>
+            <p>
+              Seu espaço acolhedor e seguro dedicado ao bem-estar emocional.
+              Transformando vidas através do cuidado.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Serviços</h4>
+            <ul>
+              <li><a href="#">Tarefas diárias</a></li>
+              <li><a href="#">Meditação</a></li>
+              <li><a href="#">Diário pessoal</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="#">Sobre Nós</a></li>
+              <li><a href="#">Nossa Equipe</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Suporte</h4>
+            <ul>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Termos de Uso</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Reequilibra. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="./assets/js/theme-manager.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

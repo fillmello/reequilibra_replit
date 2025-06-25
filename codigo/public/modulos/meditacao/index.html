@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reequilibra - Área de Meditação</title>
+    <link rel="stylesheet" href="../../assets/css/global-theme.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/css/emergencia.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.css">
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+   </head>
+   
+    <div class="main-wrapper" id="mainWrapper">
+        <section class="filters">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar meditações..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Ansiedade</button>
+                <button class="filter-btn">Estresse</button>
+                <button class="filter-btn">Depressão</button>
+                <button class="filter-btn">Sono</button>
+            </div>
+        </section>
+
+        <section class="meditations">
+            <h3>Meditações Populares</h3>
+            <div class="meditation-grid"></div>
+        </section>
+
+        <div class="audio-player hidden">
+            <div class="player-content">
+                <div class="track-info">
+                    <h4 id="track-title">Título da Meditação</h4>
+                    <p id="track-desc">Descrição breve</p>
+                </div>
+                <audio id="meditation-audio" controls></audio>
+                <div class="player-controls">
+                    <button id="play-btn"><i class="fas fa-play"></i></button>
+                    <button id="pause-btn"><i class="fas fa-pause"></i></button>
+                    <div class="progress-container">
+                        <progress id="progress-bar" value="0" max="100"></progress>
+                        <span id="current-time">0:00</span> /
+                        <span id="duration">0:00</span>
+                    </div>
+                    <button id="close-player"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Button - Fixed Position -->
+    <button id="emergencyBtn" class="emergency-btn">
+        <i class="fas fa-exclamation-triangle"></i>
+    </button>
+
+    <!-- Modal de emergência -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-heart-pulse"></i> EMERGÊNCIA</h2>
+                <button id="closeModal" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="emergency-grid">
+                <div class="emergency-card cvv" onclick="callCVV()">
+                    <div class="card-icon"><i class="fas fa-phone"></i></div>
+                    <div class="card-content">
+                        <h3>CVV 188</h3>
+                        <p>24h gratuito</p>
+                    </div>
+                </div>
+                <div class="emergency-card contacts" onclick="showContacts()">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <div class="card-content">
+                        <h3>Contatos</h3>
+                        <p>Pessoas próximas</p>
+                    </div>
+                </div>
+                <div class="emergency-card samu" onclick="callSAMU()">
+                    <div class="card-icon"><i class="fas fa-ambulance"></i></div>
+                    <div class="card-content">
+                        <h3>SAMU 192</h3>
+                        <p>Emergência médica</p>
+                    </div>
+                </div>
+                <div class="emergency-card caps" onclick="showServices()">
+                    <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                    <div class="card-content">
+                        <h3>CAPS BH</h3>
+                        <p>Saúde mental</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de contatos -->
+    <div id="contactsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-users"></i> CONTATOS DE CONFIANÇA</h2>
+                <button onclick="closeModal('contactsModal')" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="contacts-actions">
+                <button onclick="showAddContact()" class="add-contact-btn">
+                    <i class="fas fa-plus"></i> Adicionar Contato
+                </button>
+            </div>
+            <div id="contactsList" class="contacts-list"></div>
+            <div id="noContacts" class="no-contacts" style="display: none;">
+                <i class="fas fa-user-plus"></i>
+                <p>Nenhum contato cadastrado</p>
+                <small>Adicione pessoas de confiança para emergências</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar contato -->
+    <div id="addContactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="addContactTitle"><i class="fas fa-user-plus"></i> ADICIONAR CONTATO</h2>
+                <button onclick="closeModal('addContactModal')" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="contactName">Nome:</label>
+                    <input type="text" id="contactName" placeholder="Ex: Maria (Mãe)" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Telefone:</label>
+                    <input type="tel" id="contactPhone" placeholder="(31) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactRelation">Relação:</label>
+                    <select id="contactRelation">
+                        <option value="Família">Família</option>
+                        <option value="Amigo(a)">Amigo(a)</option>
+                        <option value="Namorado(a)">Namorado(a)</option>
+                        <option value="Cônjuge">Cônjuge</option>
+                        <option value="Colega">Colega</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">
+                        <i class="fas fa-save"></i> Salvar
+                    </button>
+                    <button type="button" onclick="closeModal('addContactModal')" class="cancel-btn">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de serviços -->
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-hospital"></i> SERVIÇOS BH</h2>
+                <button onclick="closeModal('servicesModal')" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <strong>CAPS Pampulha</strong>
+                        <span>Centro de Atenção Psicossocial</span>
+                        <small>(31) 3277-7004</small>
+                    </div>
+                    <button onclick="callService('31327777004')" class="call-btn">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <strong>Hospital João XXIII</strong>
+                        <span>Emergência psiquiátrica 24h</span>
+                        <small>(31) 3239-9200</small>
+                    </div>
+                    <button onclick="callService('31323999200')" class="call-btn">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <strong>CAPS Centro</strong>
+                        <span>Rua Tupis, 149 - Centro</span>
+                        <small>(31) 3277-5208</small>
+                    </div>
+                    <button onclick="callService('31327775208')" class="call-btn">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/theme-manager.js"></script>
+    <script src="../../assets/js/emergencia.js"></script>
+    <script src="../../assets/js/sidebar.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function verificaUsuarioCorrente() {
+            const usuarioCorrenteJSON = localStorage.getItem('usuarioLogado');
+            if (!usuarioCorrenteJSON) {
+                window.location.href = '../login/login.html';
+            }
+        }
+
+        verificaUsuarioCorrente();
+
+        document.getElementById('sidebarLogout').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Tem certeza que deseja sair?')) {
+                localStorage.removeItem('usuarioLogado');
+                sessionStorage.removeItem('usuarioCorrente');
+                window.location.href = '../login/login.html';
+            }
+        });
+// Verificação de usuário logado
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Criar botão de tema se não existir
+  let themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) {
+    themeToggle = document.createElement('button');
+    themeToggle.id = 'themeToggle';
+    themeToggle.className = 'theme-toggle';
+    themeToggle.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--text-primary);
+    `;
+    themeToggle.innerHTML = `<i class="fas ${savedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}"></i>`;
+    document.body.appendChild(themeToggle);
+    
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const icon = themeToggle.querySelector('i');
+    if (icon) {
+      icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+  }
+  
+  // Atualizar logo da sidebar
+  updateSidebarLogo();
+}
+
+function updateSidebarLogo() {
+  const sidebarLogo = document.getElementById('sidebarLogo');
+  const sidebar = document.getElementById('sidebar');
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+
+  if (sidebarLogo && sidebar) {
+    if (sidebar.classList.contains('collapsed')) {
+      // Use theme-appropriate small logo when collapsed
+      if (currentTheme === 'dark') {
+        sidebarLogo.src = '../../assets/images/logo-small-white.png';
+      } else {
+        sidebarLogo.src = '../../assets/images/logo-small.png';
+      }
+    } else {
+      // Use theme-appropriate full logo when expanded
+      if (currentTheme === 'dark') {
+        sidebarLogo.src = '../../assets/images/logo-white.png';
+      } else {
+        sidebarLogo.src = '../../assets/images/logo.png';
+      }
+    }
+  }
+}
+
+// Funcionalidade da sidebar (caso sidebar.js não carregue)
+// Remover toda a função initSidebar() personalizada e usar apenas:
+document.addEventListener('DOMContentLoaded', function() {
+  // Garantir que a sidebar não inicie colapsada
+  const sidebar = document.getElementById('sidebar');
+  const mainWrapper = document.getElementById('mainWrapper');
+  const expandSidebarBtn = document.getElementById('expandSidebarBtn');
+  
+  if (sidebar) {
+    sidebar.classList.remove('collapsed');
+  }
+  if (mainWrapper) {
+    mainWrapper.classList.remove('sidebar-collapsed');
+  }
+  if (expandSidebarBtn) {
+    expandSidebarBtn.style.display = 'none';
+  }
+  
+  initTheme();
+});
+
+// Funcionalidade do logout
+
+// Inicialização quando o DOM estiver carregado
+</script>
+</body>
+</html>

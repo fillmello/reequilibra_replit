@@ -1,0 +1,54 @@
+{
+  "topics": [
+    {
+      "id": "4827",
+      "title": "Como lidar com crises no trabalho?",
+      "content": "Dicas para controlar ansiedade no ambiente profissional.",
+      "author": "user123",
+      "date": "2025-05-15",
+      "category": "Ansiedade",
+      "comments": 3,
+      "likes": 8
+    },
+    {
+      "id": "4828",
+      "title": "Depressão e estudos",
+      "content": "Como manter o foco nos estudos quando se está deprimido?",
+      "author": "user789",
+      "date": "2025-05-14",
+      "category": "Depressão",
+      "comments": 5,
+      "likes": 12
+    },
+    {
+      "id": "4829",
+      "title": "Técnicas de relaxamento",
+      "content": "Compartilhando algumas técnicas que me ajudaram com o estresse.",
+      "author": "user456",
+      "date": "2025-05-16",
+      "category": "Estresse",
+      "comments": 2,
+      "likes": 5
+    }
+  ],
+  "diario": [
+    {
+      "titulo": "Dia produtivo no trabalho",
+      "conteudo": "Consegui finalizar um projeto importante e recebi elogios do meu chefe.",
+      "status": 2,
+      "data": "2025-04-22"
+    }
+  ],
+  "comunidade": [
+    {
+      "titulo": "Como lidar com crises no trabalho?",
+      "autor": "user123",
+      "respostas": [
+        {
+          "autor": "user456",
+          "conteudo": "Recomendo técnicas de respiração."
+        }
+      ]
+    }
+  ]
+}

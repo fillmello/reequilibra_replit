@@ -1,0 +1,67 @@
+{
+  "usuarios": [
+    {
+      "id": "admin",
+      "nome": "Administrador do Sistema",
+      "tipo": "admin"
+    },
+    {
+      "id": "user",
+      "nome": "Usuário Comum",
+      "tipo": "comum"
+    },
+    {
+      "id": "rommel",
+      "nome": "Rommel",
+      "tipo": "comum"
+    }
+  ],
+  "atividades": [
+    {
+      "id": "respirar",
+      "nome": "Respiração Guiada",
+      "descricao": "4s inspirar, 7s segurar, 8s expirar",
+      "tempo": 3,
+      "disponivelPara": [
+        "admin",
+        "user",
+        "rommel"
+      ]
+    },
+    {
+      "id": "desenhar",
+      "nome": "Desenho Livre",
+      "descricao": "Use cores para expressar sentimentos",
+      "tempo": 5,
+      "disponivelPara": [
+        "admin",
+        "user"
+      ]
+    },
+    {
+      "id": "musica",
+      "nome": "Música Relaxante",
+      "descricao": "Ondas do mar e pássaros",
+      "tempo": 5,
+      "disponivelPara": [
+        "admin",
+        "rommel"
+      ]
+    }
+  ],
+  "missoes": [
+    {
+      "id": "1",
+      "descricao": "Complete 1 respiração guiada"
+    },
+    {
+      "id": "2",
+      "descricao": "Desenhe por 2 minutos"
+    },
+    {
+      "id": "3",
+      "descricao": "Ouça música por 5 minutos"
+    }
+  ],
+  "atividadesConcluidas": []
+}

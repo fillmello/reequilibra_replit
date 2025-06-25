@@ -1,0 +1,42 @@
+body {
+  background-color: #dff0f8 !important;
+}
+
+
+h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: #52bfa6;
+  margin-bottom: 30px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.832);
+  margin: 100px auto auto;
+  border-radius: 10px;
+
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+}
+
+small {
+  color: #999;
+}
+
+.container input[type="button"] {
+  background-color: #967ba4;
+  color: white;
+  margin-left: 20px;
+  margin-top: 15px;
+  min-width: 110px;
+  font-weight: 600;
+}
+
+.container input[type="button"]:hover {
+  background-color: #b69ec3;
+  cursor: pointer;
+  color: #967ba4;
+}

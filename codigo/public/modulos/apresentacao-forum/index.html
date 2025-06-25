@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação do Fórum Reequilibra</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <header class="presentation-header">
+            <h1>Apresentação do Fórum do projeto Reequilibra</h1>
+            <p>Projeto Reequilibra - PUC Minas</p>
+        </header>
+
+        <main class="slides">
+            <!-- Slide 1 - Introdução -->
+            <section class="slide active" id="slide1">
+            <div class="slide-content">
+                <h2>Bem-vindo ao Fórum Reequilibra</h2>
+                <div class="content-box">
+                <p>
+                    O <strong>Fórum Reequilibra</strong> é um espaço seguro e acolhedor criado para promover o bem-estar emocional e fortalecer o apoio mútuo entre pessoas. Nossa plataforma oferece uma variedade de recursos para ajudar você a cuidar da sua saúde mental:
+                </p>
+                <ul>
+                    <li><strong>Diário emocional:</strong> para registrar e refletir sobre seus sentimentos</li>
+                    <li><strong>Comunidades de apoio:</strong> para compartilhar experiências e encontrar empatia</li>
+                    <li><strong>Recursos científicos:</strong> baseados em psicologia e saúde mental</li>
+                    <li><strong>Ferramentas interativas:</strong> para autoconhecimento e equilíbrio</li>
+                </ul>
+                <div class="mockup2">
+                    <img src="assets/mockups/diario-flow.png" alt="Visual do diário emocional">
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- Slide 2 - Regras de Participação -->
+            <section class="slide" id="slide2">
+            <div class="slide-content">
+                <h2>Regras de Participação</h2>
+                <div class="content-box">
+                <p>
+                    Para garantir um ambiente respeitoso, seguro e acolhedor para todos, o Fórum Reequilibra segue algumas regras essenciais de convivência:
+                </p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Respeite a diversidade de opiniões e experiências</li>
+                    <li><i class="fas fa-check-circle"></i> Evite julgamentos, críticas ofensivas ou linguagem agressiva</li>
+                    <li><i class="fas fa-check-circle"></i> Não compartilhe informações pessoais sensíveis</li>
+                    <li><i class="fas fa-check-circle"></i> Denuncie conteúdos impróprios ou que violem os princípios do fórum</li>
+                    <li><i class="fas fa-check-circle"></i> Lembre-se: este espaço não substitui atendimento profissional</li>
+                </ul>
+                </div>
+            </div>
+            </section>
+
+
+            <!-- Slide 3 - Recursos -->            
+            <section class="slide" id="slide3">
+                <div class="slide-content">
+                    <h2>Recursos Principais</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-book"></i>
+                            <h3>Diário Emocional</h3>
+                            <p>Registro diário de sentimentos e experiências:</p>
+                            <pre>{
+            "id": "",
+            "userid": "1",
+            "data": "2025-04-24",
+            "titulo": "Dia difícil na faculdade",
+            "status": 1,
+            "conteudo": "Hoje foi um dia muito complicado na faculdade...",
+            "favorito": false
+            }</pre>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Comunidades</h3>
+                            <p>Fóruns temáticos de apoio:</p>
+                            <pre>{
+            "id": "1",
+            "nome": "Ansiedade",
+            "descricao": "Espaço para compartilhar experiências",
+            "posts": [
+                {
+                "id": 101,
+                "autor": "Anônimo",
+                "conteudo": "Estou passando por uma crise de ansiedade...",
+                "likes": 5
+                }
+            ]
+            }</pre>
+                </div>
+            </div>
+       
+        <div class="mockup">
+            <img src="assets/mockups/comunidade-screen.png" alt="Tela de comunidade">
+        </div>
+    </div>
+</section>
+
+
+            <!-- Slide 4 - Demonstração -->
+                <section class="slide" id="slide4">
+            <div class="slide-content">
+                <h2>Demonstração Interativa</h2>
+                <div class="demo-container">
+                <div class="forum-mock">
+                    <h3>Tópicos Recentes</h3>
+
+                    <!-- Controles do Fórum -->
+                    <div class="forum-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Pesquisar tópicos(Ansiedade,Depressão,Estresse)...">
+                    </div>
+
+                    <div class="sort-box">
+                        <label for="sortSelect">Ordenar por:</label>
+                        <select id="sortSelect">
+                        <option value="">Padrão</option>
+                        <option value="date_desc">Mais recentes</option>
+                        <option value="date_asc">Mais antigos</option>
+                        <option value="likes_desc">Mais curtidos</option>
+                        <option value="comments_desc">Mais comentados</option>
+                        <option value="title_asc">Título (A-Z)</option>
+                        </select>
+                    </div>
+                    </div>
+
+                    <!-- Lista de tópicos -->
+                    <div id="topicList" class="topic-list">
+                    <!-- Tópicos serão carregados aqui -->
+                    </div>
+
+                    <!-- Tópico de demonstração -->
+                    <div class="topic" id="demoTopic">
+                    <!-- Tópico de demonstração será carregado aqui -->
+                    </div>
+                </div>
+
+                <button id="loadDemoBtn" class="demo-btn">
+                    <i class="fas fa-sync-alt"></i> Carregar Tópico de Exemplo
+                </button>
+                
+                <a href="forum.html" class="demo-btn acesso-forum" style="margin-top: 20px;">
+                    <i class="fas fa-door-open"></i> Acessar o Fórum Completo
+                </a>
+
+                </div>
+            </div>
+            </section>            
+
+
+            <!-- Slide 5 - Arquitetura dos Dados -->
+            <section class="slide" id="slide5">
+                <div class="slide-content">
+                    <h2>Arquitetura dos Dados</h2>
+                    <p>Relacionamento entre usuários, diário emocional e comunidades.</p>
+                    <div class="mockup1">
+                        <img src="assets/mockups/data-diagram.png" alt="Diagrama de dados">
+                    </div>
+                </div>
+            </section>
+            </main>
+
+
+            <!-- Slide 6 - Conclusão -->
+            <section class="slide" id="slide6">
+                <div class="slide-content">
+                    <h2>Conclusão</h2>
+                    <div class="conclusion-box">
+                        <div class="benefits" style="width: 100%;">
+                            <h3><i class="fas fa-star"></i> Benefícios</h3>
+                            <ul>
+                                <li>Informações confiáveis para promover o bem-estar emocional</li>
+                                <li>Espaço seguro para troca de experiências e apoio entre usuários</li>
+                                <li>Ferramentas práticas de autocuidado para o dia a dia</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="thank-you">
+                        <p>Obrigado pela atenção!</p>
+                        <p>Perguntas?</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="slide-controls">
+                <button id="prevBtn" class="control-btn">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                </button>
+                <div class="slide-indicators">
+                    <span class="indicator active" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                    <span class="indicator" data-slide="5"></span>
+                    <span class="indicator" data-slide="6"></span> 
+                </div>
+                <button id="nextBtn" class="control-btn">
+                    Próximo <i class="fas fa-arrow-right"></i>
+                </button>
+            </footer>
+            </div>
+    <script src="script.js"></script>
+</body>
+</html>

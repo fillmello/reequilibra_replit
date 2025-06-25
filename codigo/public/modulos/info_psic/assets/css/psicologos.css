@@ -1,0 +1,193 @@
+:root {
+    --primary-green: #01ae7d;
+    --primary-purple: #9664a9;
+    --primary-green-soft: #52bfa6;
+    --background: #ffffff;
+    --surface: #f8f9fa;
+    --surface-elevated: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-elevated: rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--primary-green), var(--primary-purple));
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.1), rgba(57, 152, 92, 0.1));
+    --white: #fff;
+}
+
+[data-theme="dark"] {
+    --background: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface-elevated: #262626;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border: #27272a;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-elevated: rgba(0, 0, 0, 0.5);
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.2), rgba(57, 152, 92, 0.2));
+}
+
+.conteudo-principal {
+    padding: 8rem 2rem 4rem;
+    background: var(--gradient-hero);
+}
+
+.barra-pesquisa {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.barra-pesquisa input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--border);
+    border-radius: 12px 0 0 12px;
+    font-size: 1rem;
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.barra-pesquisa input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.barra-pesquisa button {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.barra-pesquisa button:hover {
+    background: var(--primary-purple);
+}
+
+.btn-purple {
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-purple:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-elevated);
+}
+
+.container-psicologos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card-psicologo {
+    background: var(--surface-elevated);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px var(--shadow);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-psicologo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-elevated);
+}
+
+.detalhe-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-green), var(--primary-purple));
+}
+
+.foto-psicologo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--surface);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card-psicologo:hover .foto-psicologo {
+    transform: scale(1.05);
+}
+
+.nome-psicologo {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.especialidade-psicologo {
+    color: var(--primary-purple);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(150, 100, 169, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.avaliacao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.card-psicologo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fas.fa-star {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .conteudo-principal {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .container-psicologos {
+        grid-template-columns: 1fr;
+    }
+}

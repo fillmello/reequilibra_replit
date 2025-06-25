@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum Reequilibra - Saúde Mental</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="forum-page">
+        <!-- Cabeçalho -->
+        <header class="forum-header">
+            <div class="logo">
+                <h1><i class="fas fa-heart"></i> Reequilibra</h1>
+                <p>Fórum de Saúde Mental</p>
+            </div>
+        </header>
+
+        <!-- Barra de Pesquisa e Filtros -->
+        <div class="forum-controls">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="forumSearch" placeholder="Pesquisar tópicos...">
+                    <button id="searchButton"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="filter-box">
+                    <select id="categoryFilter">
+                        <option value="">Todas as categorias</option>
+                        <option value="Ansiedade">Ansiedade</option>
+                        <option value="Depressão">Depressão</option>
+                        <option value="Estresse">Estresse</option>
+                        <option value="Autoajuda">Autoajuda</option>
+                    </select>
+                    <select id="sortSelect">
+                        <option value="date_desc">Mais recentes</option>
+                        <option value="date_asc">Mais antigos</option>
+                        <option value="likes_desc">Mais curtidos</option>
+                        <option value="comments_desc">Mais comentados</option>
+                    </select>
+                </div>
+            </div>
+            <button id="newTopicBtn" class="primary-btn">
+                <i class="fas fa-plus"></i> Novo Tópico
+            </button>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <main class="forum-content">
+            <aside class="forum-sidebar">
+                <div class="sidebar-section">
+                    <h3>Categorias</h3>
+                    <ul class="category-list">
+                        <li><a href="#" data-category="all">Todas</a></li>
+                        <li><a href="#" data-category="Ansiedade">Ansiedade</a></li>
+                        <li><a href="#" data-category="Depressão">Depressão</a></li>
+                        <li><a href="#" data-category="Estresse">Estresse</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Top Comunidades</h3>
+                    <div class="top-community">
+                        <span>1. Ansiedade</span>
+                        <progress value="75" max="100"></progress>
+                    </div>
+                    <div class="top-community">
+                        <span>2. Depressão</span>
+                        <progress value="60" max="100"></progress>
+                     <div class="top-community">
+                        <span>3. Estresse</span>
+                        <progress value="40" max="100"></progress>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="forum-main">
+                <div class="topics-header">
+                    <h2>Tópicos Recentes</h2>
+                    <div class="topics-count">
+                        <span id="topicsCount">0</span> tópicos encontrados
+                    </div>
+                </div>
+                
+                <div id="topicsContainer" class="topics-container">
+                    <!-- Tópicos serão carregados aqui via JavaScript -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Carregando tópicos...
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span id="pageInfo">Página 1</span>
+                    <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="forum-footer">
+            <p>Projeto Reequilibra - PUC Minas © 2025</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal para novo tópico (inicialmente oculto) -->
+    <div id="newTopicModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Novo Tópico</h2>
+            <form id="topicForm">
+                <div class="form-group">
+                    <label for="topicTitle">Título</label>
+                    <input type="text" id="topicTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="topicCategory">Categoria</label>
+                    <select id="topicCategory" required>
+                        <option value="">Selecione...</option>
+                        <option value="Ansiedade">Ansiedade</option>
+                        <option value="Depressão">Depressão</option>
+                        <option value="Estresse">Estresse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="topicContent">Conteúdo</label>
+                    <textarea id="topicContent" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="forum.js"></script>
+</body>
+</html>

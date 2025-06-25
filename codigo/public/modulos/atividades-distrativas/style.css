@@ -1,0 +1,105 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Variáveis de cor */
+:root {
+  --cor-primaria: #01AE7D;
+  --cor-fundo: #C5E0ED;
+  --cor-forte: #967ba4;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: var(--cor-primaria);
+}
+
+.controle-tempo {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.atividades {
+  display: grid;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 5px;
+  color: var(--cor-primaria);
+}
+
+.card button {
+  background: var(--cor-forte);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.missoes {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.missoes h2 {
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+}
+
+#lista-missoes li {
+  list-style: none;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.selecao-usuario {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+.selecao-usuario select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}

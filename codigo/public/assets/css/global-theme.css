@@ -1,0 +1,114 @@
+:root {
+    /* Cores principais */
+    --primary-green: #01ae7d;
+    --primary-purple: #9664a9;
+    --primary-green-soft: #52bfa6;
+  
+    /* Cores de fundo */
+    --background: #ffffff;
+    --surface: #f8f9fa;
+    --surface-elevated: #ffffff;
+    --card-background: #ffffff;
+  
+    /* Cores de texto */
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+  
+    /* Bordas e sombras */
+    --border: #e5e7eb;
+    --border-color: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-elevated: rgba(0, 0, 0, 0.15);
+  
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--primary-green));
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.1), rgba(57, 152, 92, 0.1));
+  }
+  
+  [data-theme="dark"] {
+    /* Cores de fundo */
+    --background: #1a1a1a;
+    --surface: #1a1a1a;
+    --surface-elevated: #262626;
+    --card-background: #262626;
+  
+    /* Cores de texto */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+  
+    /* Bordas e sombras */
+    --border: #27272a;
+    --border-color: #27272a;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-elevated: rgba(0, 0, 0, 0.5);
+  
+    /* Gradientes */
+    --gradient-hero: linear-gradient(135deg, rgba(150, 100, 169, 0.2), rgba(57, 152, 92, 0.2));
+  }
+  
+  /* Aplicar tema ao body */
+  [data-theme="dark"] body {
+    background-color: var(--background);
+    color: var(--text-primary);
+  }
+  
+  /* Transições suaves para mudança de tema */
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Estilização padrão para botões de tema */
+  .theme-toggle {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+  }
+  
+  .theme-toggle:hover {
+    background: var(--primary-green);
+    color: white;
+  }
+  
+  /* Estilização padrão para cards */
+  .card,
+  .modal-content,
+  .service-card,
+  .about-card {
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  
+  /* Estilização padrão para inputs */
+  input,
+  textarea,
+  select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--primary-green);
+    background: var(--surface-elevated);
+  }
+  
+  /* Estilização padrão para headers */
+  .header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  [data-theme="dark"] .header {
+    background: rgba(26, 26, 26, 0.95);
+  }
+  

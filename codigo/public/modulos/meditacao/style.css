@@ -1,0 +1,500 @@
+
+:root {
+    --primary-color: #895eac;
+    --secondary-color: #a281c1;
+    --accent-color: #b995ca;
+    --light-color: #E5E9F0;
+    --dark-color: #392e40;
+    --success-color: #A3BE8C;
+    --warning-color: #EBCB8B;
+    --error-color: #BF616A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: #01ae7d;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #01ae7d;
+}
+.logo-button{
+    border: none;
+    background-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a.active, nav a:hover {
+    color: #01ae7d;
+}
+
+.user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.user-actions i {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.user-actions i:hover {
+    color: #01ae7d;
+}
+
+
+
+
+
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://wendellcarvalho.com.br/wp-content/uploads/2023/06/Entenda-como-a-pratica-da-meditacao-auxilia-no-desenvolvimento-da-resiliencia.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #01ae7d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #01ae7d;
+}
+
+
+
+
+
+
+
+.filters {
+    padding: 2rem 5rem;
+    background-color: white;
+}
+
+.search-bar {
+    position: relative;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.category-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color:#01ae7d;
+    color: white;
+    border-color: #01ae7d;
+}
+
+
+
+
+
+
+
+.meditations {
+    padding: 2rem 5rem;
+}
+
+.meditations h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.meditation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.meditation-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.meditation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 150px;
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #01ae7d;
+    font-size: 3rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.play-button {
+    background-color: #01ae7d;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #01ae7d;
+}
+
+
+
+
+
+
+
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.audio-player.visible {
+    transform: translateY(0);
+}
+
+.player-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.track-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+audio {
+    display: none;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 2;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.player-controls button:hover {
+    color: #01ae7d;
+}
+
+.progress-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+progress {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #01ae7d;
+    border-radius: 3px;
+}
+
+#close-player {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 5rem 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--light-color);
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 0 2rem;
+        height: 50vh;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .filters, .meditations {
+        padding: 2rem;
+    }
+
+    .player-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .meditation-grid {
+        grid-template-columns: 1fr;
+    }
+}
