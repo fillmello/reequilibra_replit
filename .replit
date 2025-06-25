@@ -97,7 +97,7 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd codigo && npm start"
+args = "node index.js"
 
 [deployment]
 run = ["sh", "-c", "node index.js"]
