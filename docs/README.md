@@ -230,7 +230,7 @@ Missões: desafios ou tarefas diárias/semanais para promover hábitos saudávei
 
 O vídeo a seguir apresenta o Reequilibra, uma plataforma digital voltada ao cuidado com a saúde mental de jovens. Nele, a equipe mostra o problema abordado, os objetivos do projeto e as principais funcionalidades da solução proposta
 
-[![Introdução do Projeto](images/video.png)](https://youtu.be/k_xMXx6a1Q8)
+[![Introdução do Projeto](images/video.png)](https://www.youtube.com/watch?v=lk6rZUqMB1U)
 
 
 
