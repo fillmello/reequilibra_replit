@@ -126,16 +126,25 @@ body {
 /* Mobile toggle - Simplified and always visible */
 .mobile-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem;
   z-index: 1002;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  background: var(--primary-green);
+  color: white;
+  transform: scale(1.05);
 }
 
 .mobile-toggle span {
@@ -751,16 +760,32 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .nav {
+    position: relative;
+  }
+
   .nav-center {
     display: none;
   }
 
   .mobile-toggle {
     display: flex;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .nav-actions {
     gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  .dark-mode-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .hero-content {
@@ -774,6 +799,18 @@ body {
   .hero-title {
     font-size: 2.5rem;
     line-height: 1.2;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-buttons .btn {
+    width: 200px;
+    justify-content: center;
   }
 
   .hero-visual {
