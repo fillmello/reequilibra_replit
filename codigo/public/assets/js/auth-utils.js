@@ -1,4 +1,3 @@
-
 // Utilitários de autenticação
 class AuthUtils {
   static getLoggedUser() {
@@ -20,19 +19,19 @@ class AuthUtils {
       if (confirm('Tem certeza que deseja sair?')) {
         localStorage.removeItem("usuarioLogado");
         sessionStorage.removeItem("usuarioCorrente");
-        
+
         // Limpar outros dados relacionados
         const keysToRemove = [
           'urlDestino',
           'theme',
           'sidebarCollapsed'
         ];
-        
+
         keysToRemove.forEach(key => {
           localStorage.removeItem(key);
           sessionStorage.removeItem(key);
         });
-        
+
         window.location.href = "/modulos/login/login.html";
       }
     } catch (error) {
@@ -54,9 +53,9 @@ class AuthUtils {
     const loginBtn = document.querySelector('#loginBtn');
     const signUpBtn = document.querySelector('#signupBtn');
     const logoutBtn = document.querySelector('#logoutBtn');
-    
+
     const isLoggedIn = this.isLoggedIn();
-    
+
     if (!isLoggedIn) {
       if (logoutBtn) logoutBtn.style.display = 'none';
       if (loginBtn) loginBtn.style.display = 'inline-block';
@@ -78,51 +77,32 @@ window.verificaUsuarioCorrente = () => AuthUtils.requireLogin();
 document.addEventListener('DOMContentLoaded', function() {
   AuthUtils.updateButtonsVisibility();
 });
-// Utilitários de autenticação
-let usuarioLogado = null;
-
-// Inicializar usuário logado
-function initUsuarioLogado() {
-  try {
-    const userData = localStorage.getItem('usuarioLogado');
-    if (userData) {
-      usuarioLogado = JSON.parse(userData);
-    }
-  } catch (error) {
-    console.warn('Erro ao carregar dados do usuário:', error);
-    usuarioLogado = null;
-  }
+// Função para obter usuário logado
+function getUsuarioLogado() {
+  return JSON.parse(sessionStorage.getItem('usuarioCorrente')) || JSON.parse(localStorage.getItem('usuarioLogado')) || null;
 }
 
-// Função de logout
-function logoutUser() {
-  try {
-    localStorage.removeItem('usuarioLogado');
-    sessionStorage.removeItem('usuarioCorrente');
-    usuarioLogado = null;
+// Verificar autenticação
+function verificarAutenticacao() {
+  const usuario = getUsuarioLogado();
+  if (!usuario) {
     window.location.href = '../login/login.html';
-  } catch (error) {
-    console.error('Erro durante logout:', error);
+    return false;
   }
+  return usuario;
 }
 
-// Verificar se usuário está logado
-function isUserLoggedIn() {
-  return usuarioLogado !== null;
+// Logout do usuário
+function logoutUser() {
+  sessionStorage.removeItem('usuarioCorrente');
+  localStorage.removeItem('usuarioLogado');
+  window.location.href = '../login/login.html';
 }
 
-// Obter usuário logado
-function getLoggedUser() {
-  return usuarioLogado;
+// Obter usuário atual
+function getCurrentUser() {
+  return getUsuarioLogado();
 }
 
-// Inicializar quando o DOM carregar
-document.addEventListener('DOMContentLoaded', () => {
-  initUsuarioLogado();
-});
-
-// Exportar para uso global
-window.usuarioLogado = usuarioLogado;
-window.logoutUser = logoutUser;
-window.isUserLoggedIn = isUserLoggedIn;
-window.getLoggedUser = getLoggedUser;
+// Variável global para compatibilidade
+let usuarioLogado = getUsuarioLogado();
