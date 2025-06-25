@@ -311,7 +311,6 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding-left: 4rem;
 }
 
 .hero-title {
@@ -768,7 +767,6 @@ body {
     text-align: center;
     gap: 2rem;
     padding: 0 1rem;
-    padding-left: 1rem;
   }
 
   .hero-title {
