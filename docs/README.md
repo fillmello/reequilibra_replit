@@ -202,7 +202,7 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 | --------------------------- | ---------- | -------------------------------------------------- |
 | Processo de Design Thinking | Miro       | https://miro.com/app/board/uXjVIO1vkVM=/?share_link_id=891421897664 |
 | Repositório de código     | GitHub     | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-1-ti1-0385100-reequilibra.git |
-| Hospedagem do site          | Render     | NÃO TEM AINDA!! |
+| Hospedagem do site          | Replit    | [LINK](https://replit.com/@FilipeMelo3/reequilibra?v=1) |
 | Protótipo Interativo       | FIGMA  | https://www.figma.com/proto/G1OFrsEnRmn9mlAFH9B7e7/Website-Wireframes-UI-Kit-%7C-BRIX-Agency--Community-?page-id=1202%3A72522&node-id=1255-825&viewport=-4268%2C234%2C0.47&t=vH7rgPFUWWjopKgk-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1255%3A825 |
 |                             |            |                                                    |
 
