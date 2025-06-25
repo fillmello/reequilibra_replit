@@ -216,6 +216,15 @@
 
         // Chama a função imediatamente ao carregar a página
         verificaUsuarioCorrente();
+
+        document.getElementById('sidebarLogout').addEventListener('click', function(e) {
+          e.preventDefault();
+          if (confirm('Tem certeza que deseja sair?')) {
+            localStorage.removeItem('usuarioLogado');
+            sessionStorage.removeItem('usuarioCorrente');
+            window.location.href = '../login/login.html';
+          }
+        });
     </script>
 
     <script src="../../assets/js/app.js"></script>

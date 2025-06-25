@@ -332,6 +332,18 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.getElementById('sidebarLogout').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Tem certeza que deseja sair?')) {
+          localStorage.removeItem('usuarioLogado');
+          sessionStorage.removeItem('usuarioCorrente');
+          window.location.href = '../login/login.html';
+        }
+      });
+      
+    </script>
     <script src="./scripts/app.js"></script>
     <script src="../../assets/js/emergencia.js"></script>
     <script src="../../assets/js/sidebar.js"></script>

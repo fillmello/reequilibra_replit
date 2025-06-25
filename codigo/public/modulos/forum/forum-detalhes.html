@@ -33,55 +33,7 @@
 
 <script src="../login/scripts/login.js"></script>
 
-<!-- HEADER -->
-<header class="header">
-  <nav class="nav">
-    <div class="nav-brand">
-      <a href="../../index.html">
-        <img
-          src="../../assets/images/logo.png"
-          alt="Reequilibra"
-          class="logo"
-        />
-      </a>
-    </div>
-     <div class="nav-menu" id="navMenu">
-          <a href="../../index.html" class="nav-link">Início</a>
-          <a href="../missoes/index.html" class="nav-link">Serviços</a>
-        </div>
-    <div class="nav-actions">
-      <a
-        id="loginBtn"
-        href="./modulos/login/login.html"
-        class="nav-link"
-        >Login</a
-      >
-      <a
-        id="signupBtn"
-        href="./modulos/login/cadastro.html"
-        class="btn btn-outline"
-        >Cadastro</a
-      >
-      <a
-      id="logoutBtn"
-      onclick="logoutUser()" 
-      class="btn btn-danger"
-      >Logout</a>
-      <button
-        class="theme-toggle"
-        id="themeToggle"
-        aria-label="Alternar tema"
-      >
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="mobile-toggle" id="mobileToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-</header>
+
 
   <main class="container mt-5 pt-5">
     <div class="row">
@@ -183,6 +135,15 @@
   
     // Chama a função imediatamente ao carregar a página
     verificaUsuarioCorrente();
+
+    document.getElementById('sidebarLogout').addEventListener('click', function(e) {
+      e.preventDefault();
+      if (confirm('Tem certeza que deseja sair?')) {
+        localStorage.removeItem('usuarioLogado');
+        sessionStorage.removeItem('usuarioCorrente');
+        window.location.href = '../login/login.html';
+      }
+    });
   </script>
 
 <script src="../../assets/js/app.js"></script>
