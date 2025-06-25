@@ -86,6 +86,7 @@ support = true
 [[ports]]
 localPort = 3000
 externalPort = 80
+exposeLocalhost = true
 
 [workflows]
 runButton = "Start Application"
