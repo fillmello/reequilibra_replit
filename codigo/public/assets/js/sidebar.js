@@ -2,16 +2,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar")
   const sidebarToggle = document.getElementById("sidebarToggle")
-  const expandSidebarBtn = document.getElementById("expandSidebarBtn")
+  const expandSidebarBtn = document.getElementById("expandSidebarBtn") // ✅ novo
   const mainWrapper = document.getElementById("mainWrapper")
-  const navLinks = document.querySelectorAll(".nav-link, .sidebar-link")
+  const navLinks = document.querySelectorAll(".nav-link")
   const sections = document.querySelectorAll(".section")
-
-  // Check if required elements exist
-  if (!sidebar) {
-    console.warn("Sidebar element not found")
-    return
-  }
 
   function updateSidebarLogo() {
     const sidebarLogo = document.getElementById("sidebarLogo")
@@ -35,41 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (sidebarToggle) {
-    sidebarToggle.addEventListener("click", () => {
-      const isMobile = window.innerWidth <= 768
+  sidebarToggle.addEventListener("click", () => {
+    const isMobile = window.innerWidth <= 768
 
-      if (isMobile) {
-        sidebar.classList.toggle("mobile-open")
-        toggleOverlay()
+    if (isMobile) {
+      sidebar.classList.toggle("mobile-open")
+      toggleOverlay()
+    } else {
+      sidebar.classList.toggle("collapsed")
+      mainWrapper.classList.toggle("sidebar-collapsed")
+
+      if (sidebar.classList.contains("collapsed")) {
+        expandSidebarBtn.style.display = "block"
       } else {
-        sidebar.classList.toggle("collapsed")
-        if (mainWrapper) {
-          mainWrapper.classList.toggle("sidebar-collapsed")
-        }
-
-        if (expandSidebarBtn) {
-          if (sidebar.classList.contains("collapsed")) {
-            expandSidebarBtn.style.display = "block"
-          } else {
-            expandSidebarBtn.style.display = "none"
-          }
-        }
-        updateSidebarLogo()
+        expandSidebarBtn.style.display = "none"
       }
-    })
-  }
-
-  if (expandSidebarBtn) {
-    expandSidebarBtn.addEventListener("click", () => {
-      sidebar.classList.remove("collapsed")
-      if (mainWrapper) {
-        mainWrapper.classList.remove("sidebar-collapsed")
-      }
-      expandSidebarBtn.style.display = "none"
       updateSidebarLogo()
-    })
-  }
+    }
+  })
+
+  expandSidebarBtn.addEventListener("click", () => {
+    sidebar.classList.remove("collapsed")
+    mainWrapper.classList.remove("sidebar-collapsed")
+    expandSidebarBtn.style.display = "none"
+    updateSidebarLogo()
+  })
 
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
@@ -116,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", (e) => {
     if (window.innerWidth <= 768) {
-      if (sidebar && sidebarToggle && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+      if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
         sidebar.classList.remove("mobile-open")
         removeOverlay()
       }

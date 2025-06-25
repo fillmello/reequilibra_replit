@@ -48,21 +48,20 @@ async function apiRequest(endpoint, options = {}) {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       headers: {
-        'Content-Type': 'application/json',
-        ...options.headers
+        "Content-Type": "application/json",
+        ...options.headers,
       },
-      ...options
-    });
+      ...options,
+    })
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json()
   } catch (error) {
-    console.error('API Request Error:', error);
-    return null; // Retornar null em vez de throw para evitar quebrar a aplicação
+    console.error("API Request Error:", error)
+    throw error
   }
 }
 
@@ -849,24 +848,6 @@ function showNotification(msg, type = "info") {
     }, 300)
   }, 4000)
 }
-
-// Inicialização quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', function() {
-  // Verificar se os elementos existem antes de usar
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const userName = document.getElementById('userName');
-
-  loadTheme();
-
-  // Verificar autenticação
-  const user = getUsuarioLogado();
-  if (user && userName) {
-    userName.textContent = user.nome || 'Usuário';
-  }
-
-  initializeGamification();
-  initializeEventListeners();
-})
 
 // Inicializar quando o DOM estiver carregado
 if (document.readyState === "loading") {

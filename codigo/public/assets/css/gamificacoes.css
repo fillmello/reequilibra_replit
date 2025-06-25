@@ -118,7 +118,6 @@ body {
 .nav {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -128,7 +127,6 @@ body {
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
-    white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -834,182 +832,5 @@ body {
     .form-group select {
         padding: 0.75rem;
         font-size: 0.9rem;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    .nav-menu {
-        gap: 0.5rem;
-        margin: 1rem 0;
-    }
-
-    .nav-item {
-        padding: 0.5rem 1rem;
-        min-width: 100px;
-        font-size: 0.9rem;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .missions-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .achievements-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .calendar-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .calendar-day {
-        aspect-ratio: 1;
-        min-height: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1rem;
-        position: relative;
-    }
-
-    /* Botão da sidebar no canto esquerdo */
-    .mobile-menu-btn {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background: var(--card-background);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1200;
-    }
-
-    .mobile-menu-btn:hover {
-        background: var(--primary-green);
-        color: white;
-    }
-
-    /* Menu de navegação centralizado */
-    .nav {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        flex: 1;
-        margin: 0 3rem; /* Espaço para os botões nas laterais */
-    }
-
-    .nav-link {
-        padding: 0.5rem 0.75rem;
-        background: var(--card-background);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-        background: var(--primary-green);
-        color: white;
-        border-color: var(--primary-green);
-    }
-
-    /* Botão do modo escuro no canto direito */
-    .header-actions {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .dark-mode-toggle {
-        width: 40px;
-        height: 40px;
-        background: var(--card-background);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        color: var(--text-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: var(--shadow);
-    }
-
-    .dark-mode-toggle:hover {
-        background: var(--primary-green);
-        color: white;
-        transform: translateY(-50%) scale(1.05);
-    }
-
-    .user-info {
-        display: none;
-    }
-
-    .user-profile {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .header .container {
-        padding: 0.5rem 0.75rem;
-    }
-
-    .mobile-menu-btn {
-        left: 0.75rem;
-        width: 35px;
-        height: 35px;
-    }
-
-    .nav {
-        gap: 0.25rem;
-        margin: 0 2.5rem; /* Menos espaço lateral em telas pequenas */
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 0 0.25rem;
-    }
-
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-link {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.75rem;
-        min-width: fit-content;
-        flex-shrink: 0;
-    }
-
-    .header-actions {
-        right: 0.75rem;
-    }
-
-    .dark-mode-toggle {
-        width: 35px;
-        height: 35px;
     }
 }
