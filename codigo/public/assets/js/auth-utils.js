@@ -78,3 +78,51 @@ window.verificaUsuarioCorrente = () => AuthUtils.requireLogin();
 document.addEventListener('DOMContentLoaded', function() {
   AuthUtils.updateButtonsVisibility();
 });
+// Utilitários de autenticação
+let usuarioLogado = null;
+
+// Inicializar usuário logado
+function initUsuarioLogado() {
+  try {
+    const userData = localStorage.getItem('usuarioLogado');
+    if (userData) {
+      usuarioLogado = JSON.parse(userData);
+    }
+  } catch (error) {
+    console.warn('Erro ao carregar dados do usuário:', error);
+    usuarioLogado = null;
+  }
+}
+
+// Função de logout
+function logoutUser() {
+  try {
+    localStorage.removeItem('usuarioLogado');
+    sessionStorage.removeItem('usuarioCorrente');
+    usuarioLogado = null;
+    window.location.href = '../login/login.html';
+  } catch (error) {
+    console.error('Erro durante logout:', error);
+  }
+}
+
+// Verificar se usuário está logado
+function isUserLoggedIn() {
+  return usuarioLogado !== null;
+}
+
+// Obter usuário logado
+function getLoggedUser() {
+  return usuarioLogado;
+}
+
+// Inicializar quando o DOM carregar
+document.addEventListener('DOMContentLoaded', () => {
+  initUsuarioLogado();
+});
+
+// Exportar para uso global
+window.usuarioLogado = usuarioLogado;
+window.logoutUser = logoutUser;
+window.isUserLoggedIn = isUserLoggedIn;
+window.getLoggedUser = getLoggedUser;
