@@ -186,7 +186,6 @@
     transform: translateX(-100%);
     width: 280px;
     z-index: 1100;
-    transition: transform 0.3s ease;
   }
 
   .sidebar.mobile-open {
@@ -210,14 +209,11 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: none;
   }
 
   .sidebar-overlay.active {
-    opacity: 1;
-    visibility: visible;
+    display: block;
   }
 
   .sidebar-nav {
@@ -227,8 +223,6 @@
   .sidebar-link {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
-    border-radius: 8px;
-    margin: 0.25rem 0.5rem;
   }
 
   .sidebar-text {
@@ -237,72 +231,10 @@
 
   .sidebar-header {
     padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
   }
 
   .sidebar-title {
     font-size: 1.1rem;
-  }
-
-  .sidebar-toggle {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-
-  .sidebar-toggle:hover {
-    background: var(--border-color);
-    color: var(--primary-green);
-  }
-
-  /* Hamburger menu styles */
-  .sidebar-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    position: relative;
-  }
-
-  .sidebar-toggle::before,
-  .sidebar-toggle::after,
-  .sidebar-toggle i::before {
-    content: '';
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--text-secondary);
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-  }
-
-  .sidebar-toggle i {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--text-secondary);
-    transition: all 0.3s ease;
-    border-radius: 2px;
-  }
-
-  .sidebar.mobile-open .sidebar-toggle::before {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-
-  .sidebar.mobile-open .sidebar-toggle i {
-    opacity: 0;
-  }
-
-  .sidebar.mobile-open .sidebar-toggle::after {
-    transform: rotate(-45deg) translate(6px, -6px);
   }
 }
 
