@@ -19,10 +19,14 @@ const router = jsonServer.router('./codigo/db/db.json')
 
 // Para permitir que os dados sejam alterados, altere a linha abaixo
 // colocando o atributo readOnly como false.
-const middlewares = jsonServer.defaults()
+const middlewares = jsonServer.defaults({
+  static: './codigo/public'
+})
 
 server.use(middlewares)
-server.use(router)
+server.use('/api', router)
 server.listen(3000, () => {
   console.log('JSON Server está em execução!')
+  console.log('Aplicação disponível em: http://localhost:3000')
+  console.log('API disponível em: http://localhost:3000/api')
 })
