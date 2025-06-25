@@ -86,3 +86,18 @@ support = true
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[workflows]
+runButton = "Start Application"
+
+[[workflows.workflow]]
+name = "Start Application"
+author = 16342999
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"
+
+[deployment]
+run = ["sh", "-c", "node index.js"]
