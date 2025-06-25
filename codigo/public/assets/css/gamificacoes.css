@@ -100,7 +100,7 @@ body {
 .logo-icon {
     width: 40px;
     height: 40px;
-    
+
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -605,57 +605,153 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .header .container {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .nav {
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .activities-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-    }
-    
-    .user-info {
-        display: none;
-    }
+  .container {
+    padding: 0 0.5rem;
+  }
 
-    .main-wrapper {
-        padding: 0 1rem;
-    }
+  .header {
+    padding: 0.75rem 0;
+    position: relative;
+  }
 
-    .container {
-        padding: 0 0.5rem;
-    }
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 
-    .section {
-        padding: 2rem 1rem;
-    }
+  .nav-link {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
 
-    .stat-card {
-        padding: 1.5rem 1rem;
-    }
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+    position: relative;
+  }
 
-    .activity-card {
-        padding: 1rem;
-    }
+  .dark-mode-toggle {
+    position: absolute;
+    top: -60px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: var(--surface, #f8f9fa);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
 
-    .modal-content {
-        margin: 1rem;
-        width: calc(100% - 2rem);
-        max-height: calc(100vh - 2rem);
-    }
+  .dark-mode-toggle:hover {
+    background: var(--primary-green, #01ae7d);
+    color: white;
+    transform: scale(1.05);
+  }
+
+  [data-theme="dark"] .dark-mode-toggle {
+    background: var(--surface-elevated, #262626);
+    border-color: var(--border, #27272a);
+    color: var(--text-primary, #ffffff);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .calendar-grid {
+    gap: 2px;
+  }
+
+  .calendar-day {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    padding: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .emergency-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .emergency-card {
+    padding: 1rem;
+  }
+
+  .contacts-list {
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    padding: 0.75rem;
+  }
+
+  .services-list {
+    gap: 0.75rem;
+  }
+
+  .service-item {
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .service-info {
+    width: 100%;
+  }
+
+  .call-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
