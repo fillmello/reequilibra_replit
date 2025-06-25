@@ -12,7 +12,7 @@ const activityForm = document.getElementById("activityForm")
 const loadingOverlay = document.getElementById("loadingOverlay")
 
 // Configuração da API
-const API_BASE_URL = "http://localhost:3000"
+const API_BASE_URL = window.location.origin
 
 // Função para mostrar/esconder loading
 function showLoading() {

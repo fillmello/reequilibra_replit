@@ -1,5 +1,5 @@
 // URL base para o JSON Server
-const API_URL = 'http://localhost:3000';
+const API_URL = window.location.origin;
 
 // Elementos DOM globais
 const prevBtn = document.getElementById('prevBtn');
