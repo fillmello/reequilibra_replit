@@ -24,9 +24,9 @@ const middlewares = jsonServer.defaults({
 })
 
 server.use(middlewares)
-server.use('/api', router)
+server.use(router)
 server.listen(3000, () => {
   console.log('JSON Server está em execução!')
   console.log('Aplicação disponível em: http://localhost:3000')
-  console.log('API disponível em: http://localhost:3000/api')
+  console.log('API disponível em: http://localhost:3000')
 })
